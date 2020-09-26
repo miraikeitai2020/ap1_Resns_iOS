@@ -1,0 +1,6 @@
+framework module Pods_Resns {
+  umbrella header "Pods-Resns-umbrella.h"
+
+  export *
+  module * { export * }
+}
