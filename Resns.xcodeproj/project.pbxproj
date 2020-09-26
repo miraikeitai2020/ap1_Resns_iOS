@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7A52841234E07136035E4AB3 /* Pods_ResnsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769996D1C1B9B027A0170A40 /* Pods_ResnsTests.framework */; };
+		AB260A28251F6E2800964D8D /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB260A27251F6E2800964D8D /* Signup.swift */; };
+		AB260A30251F7CB200964D8D /* GenreSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB260A2F251F7CB200964D8D /* GenreSelect.swift */; };
+		AB260A38251F917F00964D8D /* GenderSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB260A37251F917F00964D8D /* GenderSelect.swift */; };
+		AB260A40251F921A00964D8D /* BirthdaySetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB260A3F251F921A00964D8D /* BirthdaySetting.swift */; };
+		AB260A48251F9A6B00964D8D /* Checksettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB260A47251F9A6B00964D8D /* Checksettings.swift */; };
 		ABD49880251E2C950067AD73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4987F251E2C950067AD73 /* AppDelegate.swift */; };
 		ABD49882251E2C950067AD73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD49881251E2C950067AD73 /* SceneDelegate.swift */; };
 		ABD49884251E2C950067AD73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD49883251E2C950067AD73 /* ViewController.swift */; };
@@ -46,6 +51,11 @@
 		8CD948E4A06F5501C498D5A4 /* Pods-ResnsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResnsTests.debug.xcconfig"; path = "Target Support Files/Pods-ResnsTests/Pods-ResnsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B479147AD893DDC30196A3C /* Pods-Resns-ResnsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resns-ResnsUITests.release.xcconfig"; path = "Target Support Files/Pods-Resns-ResnsUITests/Pods-Resns-ResnsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F109DD5771466BB76D0B9F1 /* Pods-Resns-ResnsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resns-ResnsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Resns-ResnsUITests/Pods-Resns-ResnsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB260A27251F6E2800964D8D /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		AB260A2F251F7CB200964D8D /* GenreSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSelect.swift; sourceTree = "<group>"; };
+		AB260A37251F917F00964D8D /* GenderSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelect.swift; sourceTree = "<group>"; };
+		AB260A3F251F921A00964D8D /* BirthdaySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaySetting.swift; sourceTree = "<group>"; };
+		AB260A47251F9A6B00964D8D /* Checksettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checksettings.swift; sourceTree = "<group>"; };
 		ABD4987C251E2C950067AD73 /* Resns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD4987F251E2C950067AD73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD49881251E2C950067AD73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +142,11 @@
 				ABD4987F251E2C950067AD73 /* AppDelegate.swift */,
 				ABD49881251E2C950067AD73 /* SceneDelegate.swift */,
 				ABD49883251E2C950067AD73 /* ViewController.swift */,
+				AB260A27251F6E2800964D8D /* Signup.swift */,
+				AB260A2F251F7CB200964D8D /* GenreSelect.swift */,
+				AB260A37251F917F00964D8D /* GenderSelect.swift */,
+				AB260A3F251F921A00964D8D /* BirthdaySetting.swift */,
+				AB260A47251F9A6B00964D8D /* Checksettings.swift */,
 				ABD49885251E2C950067AD73 /* Main.storyboard */,
 				ABD49888251E2C960067AD73 /* Assets.xcassets */,
 				ABD4988A251E2C960067AD73 /* LaunchScreen.storyboard */,
@@ -406,7 +421,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB260A40251F921A00964D8D /* BirthdaySetting.swift in Sources */,
+				AB260A38251F917F00964D8D /* GenderSelect.swift in Sources */,
 				ABD49884251E2C950067AD73 /* ViewController.swift in Sources */,
+				AB260A28251F6E2800964D8D /* Signup.swift in Sources */,
+				AB260A30251F7CB200964D8D /* GenreSelect.swift in Sources */,
+				AB260A48251F9A6B00964D8D /* Checksettings.swift in Sources */,
 				ABD49880251E2C950067AD73 /* AppDelegate.swift in Sources */,
 				ABD49882251E2C950067AD73 /* SceneDelegate.swift in Sources */,
 			);
