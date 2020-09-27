@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007D424E25206047009DF234 /* GuestHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007D424D25206047009DF234 /* GuestHome.swift */; };
+		007D4253252063FC009DF234 /* GuestAcount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007D4252252063FC009DF234 /* GuestAcount.swift */; };
 		00EAB14B251FB8750081CF96 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB14A251FB8750081CF96 /* Home.swift */; };
 		00EAB150251FBBFA0081CF96 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB14F251FBBFA0081CF96 /* Search.swift */; };
 		00EAB155251FC18F0081CF96 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB154251FC18F0081CF96 /* News.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		007D424D25206047009DF234 /* GuestHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestHome.swift; sourceTree = "<group>"; };
+		007D4252252063FC009DF234 /* GuestAcount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestAcount.swift; sourceTree = "<group>"; };
 		00EAB14A251FB8750081CF96 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		00EAB14F251FBBFA0081CF96 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		00EAB154251FC18F0081CF96 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				AB260A3F251F921A00964D8D /* BirthdaySetting.swift */,
 				AB260A47251F9A6B00964D8D /* Checksettings.swift */,
 				ABD49885251E2C950067AD73 /* Main.storyboard */,
+				007D4252252063FC009DF234 /* GuestAcount.swift */,
+				007D424D25206047009DF234 /* GuestHome.swift */,
 				00EAB175251FDE120081CF96 /* RequestEnd.swift */,
 				00EAB170251FDB550081CF96 /* RequestForm.swift */,
 				00EAB16B251FD9210081CF96 /* Option.swift */,
@@ -445,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007D4253252063FC009DF234 /* GuestAcount.swift in Sources */,
 				AB260A40251F921A00964D8D /* BirthdaySetting.swift in Sources */,
 				00EAB171251FDB550081CF96 /* RequestForm.swift in Sources */,
 				AB260A38251F917F00964D8D /* GenderSelect.swift in Sources */,
@@ -456,6 +463,7 @@
 				00EAB15A251FCFB40081CF96 /* List.swift in Sources */,
 				AB260A30251F7CB200964D8D /* GenreSelect.swift in Sources */,
 				00EAB155251FC18F0081CF96 /* News.swift in Sources */,
+				007D424E25206047009DF234 /* GuestHome.swift in Sources */,
 				00EAB176251FDE120081CF96 /* RequestEnd.swift in Sources */,
 				AB260A48251F9A6B00964D8D /* Checksettings.swift in Sources */,
 				00EAB150251FBBFA0081CF96 /* Search.swift in Sources */,

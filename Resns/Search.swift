@@ -16,6 +16,9 @@ class Search: UIViewController {
     }
     
 
+    @IBAction func News(_ sender: Any) {
+        performSegue(withIdentifier: "Newsnext", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

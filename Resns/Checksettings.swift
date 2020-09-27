@@ -16,6 +16,9 @@ class Checksettings: UIViewController {
     }
     
 
+    @IBAction func Decision(_ sender: Any) {
+        performSegue(withIdentifier: "GuestHomenext", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

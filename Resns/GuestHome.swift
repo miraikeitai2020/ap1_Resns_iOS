@@ -1,5 +1,5 @@
 //
-//  List.swift
+//  GuestHome.swift
 //  Resns
 //
 //  Created by shimotahira on 2020/09/27.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class List: UIViewController {
+class GuestHome: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,10 +15,30 @@ class List: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func Home(_ sender: Any) {
+    }
+    
+    
+    @IBAction func Search(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func List(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func Acount(_ sender: Any) {
+        performSegue(withIdentifier: "GuestAcountnext", sender: nil)
+    }
+    
+    
+    
     @IBAction func News(_ sender: Any) {
         performSegue(withIdentifier: "Newsnext", sender: nil)
     }
+    
     /*
     // MARK: - Navigation
 

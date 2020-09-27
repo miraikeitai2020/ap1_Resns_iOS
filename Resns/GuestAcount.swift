@@ -1,5 +1,5 @@
 //
-//  List.swift
+//  GuestAcount.swift
 //  Resns
 //
 //  Created by shimotahira on 2020/09/27.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class List: UIViewController {
+class GuestAcount: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,10 +15,25 @@ class List: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func News(_ sender: Any) {
-        performSegue(withIdentifier: "Newsnext", sender: nil)
+    @IBAction func RequestForm(_ sender: Any) {
     }
+    
+    
+    
+    @IBAction func Tutorial(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func GenreChange(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func Option(_ sender: Any) {
+        performSegue(withIdentifier: "Optionnext", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

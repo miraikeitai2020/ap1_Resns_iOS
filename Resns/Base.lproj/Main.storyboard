@@ -55,6 +55,176 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="123.88392857142857"/>
         </scene>
+        <!--Guest Home-->
+        <scene sceneID="kTs-bS-Sjx">
+            <objects>
+                <viewController id="ZLB-ib-qmc" customClass="GuestHome" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1cP-Ty-oxo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXu-ze-9Gq">
+                                <rect key="frame" x="43" y="825" width="73" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="ホーム"/>
+                                <connections>
+                                    <action selector="Home:" destination="ZLB-ib-qmc" eventType="touchUpInside" id="W1B-4C-9SZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s22-NA-nUl">
+                                <rect key="frame" x="143" y="828" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="検索"/>
+                                <connections>
+                                    <action selector="Search:" destination="ZLB-ib-qmc" eventType="touchUpInside" id="YQs-vZ-Ixn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REO-tn-Pd8">
+                                <rect key="frame" x="216" y="828" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="リスト"/>
+                                <connections>
+                                    <action selector="List:" destination="ZLB-ib-qmc" eventType="touchUpInside" id="2XD-uw-mDa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZo-HN-Kuk">
+                                <rect key="frame" x="290" y="825" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="アカウント"/>
+                                <connections>
+                                    <action selector="Acount:" destination="ZLB-ib-qmc" eventType="touchUpInside" id="q11-HL-mXI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ゲスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6s-Dm-8MV">
+                                <rect key="frame" x="139" y="434" width="136" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ku-di-219">
+                                <rect key="frame" x="48" y="90" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ジャンル"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBc-mr-tuV">
+                                <rect key="frame" x="131" y="90" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ジャンル"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neA-c2-PJl">
+                                <rect key="frame" x="221" y="90" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ジャンル"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsJ-hj-Imt">
+                                <rect key="frame" x="313" y="90" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ジャンル"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-cp-dbp">
+                                <rect key="frame" x="20" y="154" width="177" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="記事のサムネ"/>
+                                <connections>
+                                    <action selector="News:" destination="ZLB-ib-qmc" eventType="touchUpInside" id="Cer-Yl-saB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X7R-n4-kXx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="eTr-bL-s6o" kind="show" identifier="GuestAcountnext" id="rRC-s7-225"/>
+                        <segue destination="c5e-AV-C1l" kind="show" identifier="Newsnext" id="Xh7-gV-aFE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5EZ-ey-H2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9559" y="1396"/>
+        </scene>
+        <!--Guest Acount-->
+        <scene sceneID="zZq-nm-HtM">
+            <objects>
+                <viewController id="eTr-bL-s6o" customClass="GuestAcount" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dDf-xR-qLF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUe-jG-LW6">
+                                <rect key="frame" x="101" y="398" width="212" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="応募フォーム"/>
+                                <connections>
+                                    <action selector="RequestForm:" destination="eTr-bL-s6o" eventType="touchUpInside" id="IMG-Bu-gY3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GO4-CU-AEH">
+                                <rect key="frame" x="20" y="636" width="178" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="チュートリアル"/>
+                                <connections>
+                                    <action selector="Tutorial:" destination="gw5-zH-WGB" eventType="touchUpInside" id="8V8-uT-eYj"/>
+                                    <action selector="Tutorial:" destination="eTr-bL-s6o" eventType="touchUpInside" id="SlJ-ya-EiX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezk-aq-eYK">
+                                <rect key="frame" x="242" y="629" width="152" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="ジャンル変更"/>
+                                <connections>
+                                    <action selector="GenreChange:" destination="eTr-bL-s6o" eventType="touchUpInside" id="Bjf-sI-kD4"/>
+                                    <action selector="GenreChange:" destination="gw5-zH-WGB" eventType="touchUpInside" id="tg0-W6-a2w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5n-uR-70a">
+                                <rect key="frame" x="84" y="750" width="51" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="設定"/>
+                                <connections>
+                                    <action selector="Option:" destination="eTr-bL-s6o" eventType="touchUpInside" id="Fl5-i8-rjs"/>
+                                    <action selector="Option:" destination="gw5-zH-WGB" eventType="touchUpInside" id="kLj-sg-rei"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-v0-C61">
+                                <rect key="frame" x="255" y="750" width="127" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="ログアウト"/>
+                                <connections>
+                                    <action selector="Logout:" destination="gw5-zH-WGB" eventType="touchUpInside" id="MNK-Bg-cyO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ゲスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed5-Be-iu1">
+                                <rect key="frame" x="162" y="322" width="91" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="8pjX1BYqQyvKuGd1594490989_1594491000" translatesAutoresizingMaskIntoConstraints="NO" id="rpt-Wn-iHZ">
+                                <rect key="frame" x="131" y="139" width="152" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XaK-BX-oda"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RNi-j5-q4M"/>
+                    <connections>
+                        <segue destination="SwM-4t-vOf" kind="show" identifier="Optionnext" id="fsN-t8-5NU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlt-5M-qwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11275" y="1110"/>
+        </scene>
         <!--Home-->
         <scene sceneID="W4Y-2Z-r5L">
             <objects>
@@ -122,6 +292,13 @@
                                     <segue destination="c5e-AV-C1l" kind="show" identifier="Newsnext" id="pvG-wf-Cg8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ログイン済" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-J7-uGb">
+                                <rect key="frame" x="106" y="557" width="202" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CJi-H3-3hT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -145,10 +322,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-D6-VQh">
-                                <rect key="frame" x="20" y="118" width="220" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J5S-ri-IiI">
                                 <rect key="frame" x="237" y="118" width="177" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -165,14 +338,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFB-jV-JcD">
+                                <rect key="frame" x="39" y="118" width="177" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="記事のサムネ"/>
+                                <connections>
+                                    <action selector="News:" destination="o2o-0d-Xva" eventType="touchUpInside" id="l7g-6k-tK9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="szR-Ye-sl5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="c5e-AV-C1l" kind="show" identifier="Newsnext" id="kBr-CD-Snl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szS-zN-wO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7837.6811594202909" y="-1535.4910714285713"/>
+            <point key="canvasLocation" x="8233.3333333333339" y="-1592.4107142857142"/>
         </scene>
         <!--Acount-->
         <scene sceneID="kYj-ix-aZy">
@@ -318,16 +503,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeM-sA-Qas">
-                                <rect key="frame" x="131" y="600" width="152" height="42"/>
+                                <rect key="frame" x="131" y="554" width="152" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="ホームへ戻る"/>
+                                <connections>
+                                    <action selector="HomeReturn:" destination="IXX-2N-hzp" eventType="touchUpInside" id="WAW-Zk-FSH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Ir-xM-tVD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="oB4-WJ-T98"/>
+                    <connections>
+                        <segue destination="G3I-H2-D53" kind="custom" identifier="Homenext" id="gZl-H9-T8B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hf-Xz-Nst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -368,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFu-pW-TtA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7439" y="25"/>
+            <point key="canvasLocation" x="12210" y="236"/>
         </scene>
         <!--Search-->
         <scene sceneID="mrc-Pn-Mpg">
@@ -383,14 +574,26 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grs-sK-EWb">
+                                <rect key="frame" x="20" y="222" width="177" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="記事のサムネ"/>
+                                <connections>
+                                    <action selector="News:" destination="oBL-ii-pjB" eventType="touchUpInside" id="lgO-sS-v0d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QVi-MB-Oh9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="c5e-AV-C1l" kind="show" identifier="Newsnext" id="2is-su-mHR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgW-Ls-lx3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7838" y="-2322"/>
+            <point key="canvasLocation" x="8233.3333333333339" y="-2259.375"/>
         </scene>
         <!--News-->
         <scene sceneID="UaK-Sn-vRS">
@@ -447,7 +650,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jp9-Mj-2TW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6564" y="-2812"/>
+            <point key="canvasLocation" x="10380" y="-3793"/>
         </scene>
         <!--Signup-->
         <scene sceneID="h5o-GO-b09">
@@ -621,6 +824,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="確定"/>
                                 <connections>
+                                    <action selector="Decision:" destination="vfv-aX-34w" eventType="touchUpInside" id="h1N-gB-vLE"/>
                                     <action selector="DecisionButton:" destination="LGV-Qg-SGU" eventType="touchUpInside" id="ArQ-gS-bUB"/>
                                 </connections>
                             </button>
@@ -636,6 +840,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="YJe-IV-Jax"/>
+                    <connections>
+                        <segue destination="ZLB-ib-qmc" kind="custom" identifier="GuestHomenext" id="rlq-g3-KPV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otI-qj-Vls" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -660,6 +867,11 @@
             <point key="canvasLocation" x="140.57971014492756" y="123.88392857142857"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xh7-gV-aFE"/>
+        <segue reference="fsN-t8-5NU"/>
+        <segue reference="gZl-H9-T8B"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="8pjX1BYqQyvKuGd1594490989_1594491000" width="260" height="252"/>
         <systemColor name="labelColor">
