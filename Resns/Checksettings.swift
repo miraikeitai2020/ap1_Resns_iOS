@@ -16,6 +16,16 @@ class Checksettings: UIViewController {
     }
     
 
+    @IBAction func Decision(_ sender: Any) {
+        // Storyboardのインスタンスの取得
+        let storyboard: UIStoryboard = self.storyboard!
+        
+        // 遷移先GuestHomeのインスタンス取得
+        let nextView = storyboard.instantiateViewController(withIdentifier: "GuestHomeScreen") as! GuestHome
+        
+        // 画面遷移(プッシュ遷移)
+        self.navigationController?.pushViewController(nextView, animated: true)
+    }
     /*
     // MARK: - Navigation
 
