@@ -1,0 +1,10 @@
+name: Resns
+options:
+  bundleIdPrefix: Resns.Iphone11
+targets:
+  ResnsApplication:
+    type: application
+    platform: iOS
+    sources: Resns
+    settings:
+      CURRENT_PROJECT_VERSION: 1
