@@ -16,8 +16,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-# CocoaPod
-Pods/*
 
 # others
 *.swp
