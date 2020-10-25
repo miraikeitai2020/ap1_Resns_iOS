@@ -61,33 +61,9 @@ open class URLSessionClient: NSObject, URLSessionDelegate, URLSessionTaskDelegat
   ///
   /// NOTE: This must be called from the `deinit` of anything holding onto this client in order to break a retain cycle with the delegate.
   public func invalidate() {
-    func cleanup() {
-      self.session = nil
-      self.clearAllTasks()
-    }
-    
-    guard let session = self.session else {
-      // Session's already gone, just cleanup.
-      cleanup()
-      return
-    }
-    
-    let currentTaskIDs = self.tasks.value.keys
-    if #available(OSX 10.11, iOS 9.0, *) {
-      session.getAllTasks { [weak self] tasks in
-        for task in tasks {
-          if currentTaskIDs.contains(task.taskIdentifier) {
-            self?.cancel(task: task)
-          }
-        }
-        
-        cleanup()
-      }
-    } else {
-      // Fallback on earlier versions - note that per docs this does *not* cancel all operations on the shared session.
-      session.invalidateAndCancel()
-      cleanup()
-    }
+    self.clearAllTasks()
+    self.session?.invalidateAndCancel()
+    self.session = nil
   }
   
   /// Clears underlying dictionaries of any data related to a particular task identifier.
@@ -101,11 +77,6 @@ open class URLSessionClient: NSObject, URLSessionDelegate, URLSessionTaskDelegat
   ///
   /// Mostly useful for cleanup and/or after invalidation of the `URLSession`.
   open func clearAllTasks() {
-    guard self.tasks.value.apollo.isNotEmpty else {
-      // Nothing to clear
-      return
-    }
-    
     self.tasks.mutate { $0.removeAll() }
   }
   

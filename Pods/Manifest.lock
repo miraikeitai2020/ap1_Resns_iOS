@@ -1,18 +1,30 @@
 PODS:
-  - Apollo (0.33.0):
-    - Apollo/Core (= 0.33.0)
-  - Apollo/Core (0.33.0)
+  - Apollo (0.32.0):
+    - Apollo/Core (= 0.32.0)
+  - Apollo/Core (0.32.0)
+  - FontAwesome.swift (1.9.0)
+  - KeychainSwift (19.0.0)
+  - TransitionableTab (0.2.0)
 
 DEPENDENCIES:
-  - Apollo
+  - Apollo (= 0.32.0)
+  - FontAwesome.swift
+  - KeychainSwift
+  - TransitionableTab (~> 0.2.0)
 
 SPEC REPOS:
   trunk:
     - Apollo
+    - FontAwesome.swift
+    - KeychainSwift
+    - TransitionableTab
 
 SPEC CHECKSUMS:
-  Apollo: 85c8eb57330bdbffa9d9affabc73f961e1225c4e
+  Apollo: 1389ecb47926faae2b95acb331a088fa88de13f6
+  FontAwesome.swift: a403b88cec950511745ba8f2decd1b6a07346d13
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  TransitionableTab: 54a5d0af475033bdb83959fde4e5d6201af7e2ab
 
-PODFILE CHECKSUM: 098d94afb7c2b9fa80f926d9e17e68c8c04a3e85
+PODFILE CHECKSUM: 3aff537d7666c2ea6e6aa965879b9184cdeb8a1a
 
 COCOAPODS: 1.9.3

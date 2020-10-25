@@ -2,7 +2,7 @@ name: Resns
 options:
   bundleIdPrefix: Resns.Iphone11
 targets:
-  ResnsApplication:
+  Resns:
     type: application
     platform: iOS
     sources: Resns

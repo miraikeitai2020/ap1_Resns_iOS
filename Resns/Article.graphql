@@ -1,0 +1,17 @@
+
+query Article($articleid:String!){
+  article(articleid:$articleid) {
+    info{
+      title
+      imagePath
+      nice
+      context
+    }
+
+    errors{
+      code
+      message
+      description
+    }
+  }
+}

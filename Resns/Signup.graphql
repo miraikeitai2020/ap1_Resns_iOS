@@ -1,0 +1,11 @@
+
+mutation Signup{
+  signup{
+    value
+    errors{
+      code
+      message
+      description
+    }
+  }
+}

@@ -1,0 +1,18 @@
+//Enumフォルダ説明
+
+有限集合に名前をつけたもの
+有限集合内の各要素に名前をつけて可読性向上
+
+ UIViewController(画面要素) のクラスやアイコン画像等の設定については Enumに別途切り出しておき、
+ UITabBarController が持っている Index 値とも上手に対応できるようにしたい(願望)
+
+https://qiita.com/hachinobu/items/392c96820588d1c03b0c
+
+アニメーション説明↓
+https://re-engines.com/2017/12/27/swift%E3%82%BF%E3%83%96%E3%81%AE%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E6%99%82%E3%81%AB%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%8C%E7%B0%A1%E5%8D%98%E3%81%AB%E5%AE%9F/
+
+1st sprint [add]
+MainTabBarAnimations :
+    tabbarのアニメーション定義 ViewController/TabBar/MainTabBarControllerで使用
+MainTabBarItems :
+    tabbarのアイコン、タイトル定義 ViewController/TabBar/MainTabBarControllerで使用

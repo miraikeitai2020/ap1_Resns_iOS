@@ -1,0 +1,17 @@
+
+query Articles($genre:String!,$year:Int,$month:Int){
+  articles(genre:$genre,year:$year,month:$month) {
+    articles{
+      id
+      title
+      ImagePath
+      tags
+    }
+    
+    errors{
+      code
+      message
+      description
+    }
+  }
+}

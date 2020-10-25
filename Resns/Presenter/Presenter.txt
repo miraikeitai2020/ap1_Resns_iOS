@@ -1,0 +1,9 @@
+//Presenterファイル説明
+
+ViewとModel側の処理を連動させる処理
+
+Viewcontrollerで実行するための定義をするよ
+Model定義に即した表示データを作る
+
+→ 該当ViewControllerへの橋渡し役
+
