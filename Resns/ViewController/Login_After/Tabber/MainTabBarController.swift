@@ -56,7 +56,7 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         
         // 初期設定として空のUIViewControllerのインスタンスを追加
         self.viewControllers = [UIViewController(), UIViewController(),
-            UIViewController()]
+            UIViewController(),UIViewController()]
     }
     
     //GlobalTabBarControllerで表示したい画面に関する設定処理
@@ -72,11 +72,11 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         
         // Tabbar用のAttributeを決定する
         let normalAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.font: tabBarItemFont,
+            NSAttributedString.Key.font: tabBarItemFont as Any,
             NSAttributedString.Key.foregroundColor: normalColor
         ]
         let selectedAttributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.font: tabBarItemFont,
+            NSAttributedString.Key.font: tabBarItemFont as Any,
             NSAttributedString.Key.foregroundColor: selectedColer
         ]
         

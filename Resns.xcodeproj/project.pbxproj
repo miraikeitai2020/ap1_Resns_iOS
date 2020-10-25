@@ -46,7 +46,6 @@
 		ABD01AAE254556BB00139492 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD01AAD254556BB00139492 /* ArticlesPresenter.swift */; };
 		ABD4DA01254429FD00C0AA64 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DA00254429FD00C0AA64 /* Network.swift */; };
 		ABD4DA0525442ECC00C0AA64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DA0425442ECC00C0AA64 /* SceneDelegate.swift */; };
-		ABD4DA0A254434BC00C0AA64 /* aaa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD4DA09254434BC00C0AA64 /* aaa.storyboard */; };
 		B2986E4A90A00DEF71957DD6 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005168CB48534AA1DE993A25 /* Search.storyboard */; };
 		B57CC75EB12EDE5BB9FA1758 /* Articles.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 8DC1D138689C2356A23B7CCE /* Articles.graphql */; };
 		BD117BEAC6806EA123BF9854 /* MainTabBarAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAE26F211A05289EC9673C5 /* MainTabBarAnimations.swift */; };
@@ -103,7 +102,6 @@
 		ABD01AB025455A9400139492 /* Article.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Article.graphql; sourceTree = "<group>"; };
 		ABD4DA00254429FD00C0AA64 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Resns/Network.swift; sourceTree = SOURCE_ROOT; };
 		ABD4DA0425442ECC00C0AA64 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABD4DA09254434BC00C0AA64 /* aaa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = aaa.storyboard; sourceTree = "<group>"; };
 		AD89E85D206372DEB4B577A1 /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
 		C87013DC75CA880C23BDE2AF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D0A52DE63EAA7F80C22E0132 /* Signup.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Signup.graphql; sourceTree = "<group>"; };
@@ -418,7 +416,6 @@
 			children = (
 				20C623C79F632115449104E8 /* Storyboard_readme */,
 				524BA7A4519B2998E9A564A9 /* Login_After */,
-				ABD4DA09254434BC00C0AA64 /* aaa.storyboard */,
 			);
 			path = Storyborad;
 			sourceTree = "<group>";
@@ -510,7 +507,6 @@
 				1FEC745474DD47DED1EA4D4A /* Model_readme.txt in Resources */,
 				AB80CB7125432D970094DB65 /* PhotoGalleryCollectionViewCell.xib in Resources */,
 				AB80CB85254344360094DB65 /* Acount.storyboard in Resources */,
-				ABD4DA0A254434BC00C0AA64 /* aaa.storyboard in Resources */,
 				AB80CB6C25432D970094DB65 /* TopicsCollectionViewCell.xib in Resources */,
 				B2986E4A90A00DEF71957DD6 /* Search.storyboard in Resources */,
 				AB80CB6F25432D970094DB65 /* TopicsCardView.xib in Resources */,

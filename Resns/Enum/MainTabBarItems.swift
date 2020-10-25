@@ -7,6 +7,7 @@ import FontAwesome_swift
 enum MainTabBarItems: CaseIterable {
 
     case Home
+    case Search
     case List
     case Acount
 
@@ -18,6 +19,8 @@ enum MainTabBarItems: CaseIterable {
         switch self {
         case .Home:
             storyboardName = "Home"
+        case .Search:
+            storyboardName = "Search"
         case .List:
             storyboardName = "List"
         case .Acount:
@@ -31,10 +34,12 @@ enum MainTabBarItems: CaseIterable {
         switch self {
         case .Home:
             return 0
-        case .List:
+        case .Search:
             return 1
-        case .Acount:
+        case .List:
             return 2
+        case .Acount:
+            return 3
         }
     }
 
@@ -43,10 +48,12 @@ enum MainTabBarItems: CaseIterable {
         switch self {
         case .Home:
             return "ホーム"
-        case .List:
+        case .Search:
             return "検索"
-        case .Acount:
+        case .List:
             return "リスト"
+        case .Acount:
+            return "アカウント"
         }
     }
 
@@ -54,11 +61,13 @@ enum MainTabBarItems: CaseIterable {
     func getFontAwesomeIcon() -> FontAwesome {
         switch self {
         case .Home:
-            return .hamburger
+            return .home
+        case .Search:
+            return .search
         case .List:
-            return .newspaper
+            return .bookmark
         case .Acount:
-            return .images
+            return .userCircle
         }
     }
 }
