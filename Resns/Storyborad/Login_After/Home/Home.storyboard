@@ -25,24 +25,41 @@
             </objects>
             <point key="canvasLocation" x="4453" y="-2010"/>
         </scene>
-        <!--Photo Gallery View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="kg0-hb-mWA">
             <objects>
-                <viewController restorationIdentifier="Home" storyboardIdentifier="Home" id="Hms-x5-1qj" customClass="PhotoGalleryViewController" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hms-x5-1qj" customClass="HomeViewController" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5v1-wI-AR6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8pjX1BYqQyvKuGd1594490989_1594491000" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-hZ-Kng">
+                                <rect key="frame" x="20" y="603" width="162" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gIk-nb-DYJ" appends="YES" id="Tb9-VN-ncD"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="j3L-IM-reu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="77T-hU-KJq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyj-r5-rIn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gIk-nb-DYJ">
+                    <connections>
+                        <action selector="NewsImageTap:" destination="Hms-x5-1qj" id="1qb-aj-Jom"/>
+                        <outlet property="delegate" destination="S4K-hZ-Kng" id="CKq-Gd-s7b"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5367" y="-2010"/>
+            <point key="canvasLocation" x="5366.666666666667" y="-2010.2678571428571"/>
         </scene>
     </scenes>
     <resources>
+        <image name="8pjX1BYqQyvKuGd1594490989_1594491000" width="260" height="252"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
