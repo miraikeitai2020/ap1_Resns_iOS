@@ -34,19 +34,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-                Network.shared.apollo.fetch(query: ArticlesQuery(genre: "Anime")) { result in
-                    
-                    switch result{
-                    case .success(let response):
-                        let Article = response.data?.articles.articles
-                        
-                        print(Article)
-
-                        
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
+        /*Network.shared.apollo.fetch(query: ArticleQuery(articleid:"20")) { result in
+            
+            
+            switch result{
+            case .success(let response):
+                
+                let Article_title = response.data?.article.info?.title
+                let Article_image = response.data?.article.info?.imagePath
+                let Article_nice = response.data?.article.info?.nice
+                let Article_context = response.data?.article.info?.context
+                
+                print(Article_title!)
+                print(Article_image!)
+                print(Article_nice!)
+                print(Article_context!)
+                
+            
+            
+            case .failure(let error):
+                print(error)
+            }
+        }*/
     
         return true
     }

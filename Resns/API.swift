@@ -11,18 +11,30 @@ public final class ArticleQuery: GraphQLQuery {
     query Article($articleid: String!) {
       article(articleid: $articleid) {
         __typename
-        info {
-          __typename
-          title
-          imagePath
-          nice
-          context
-        }
         errors {
           __typename
           code
           message
           description
+        }
+        info {
+          __typename
+          id
+          title
+          imagePath
+          nice
+          context
+          userStatus {
+            __typename
+            nice
+            list
+          }
+          comment {
+            __typename
+            name
+            image
+            comment
+          }
         }
       }
     }
@@ -74,8 +86,8 @@ public final class ArticleQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("info", type: .object(Info.selections)),
           GraphQLField("errors", type: .list(.object(Error.selections))),
+          GraphQLField("info", type: .object(Info.selections)),
         ]
       }
 
@@ -85,8 +97,8 @@ public final class ArticleQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(info: Info? = nil, errors: [Error?]? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Article", "info": info.flatMap { (value: Info) -> ResultMap in value.resultMap }, "errors": errors.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }])
+      public init(errors: [Error?]? = nil, info: Info? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Article", "errors": errors.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }, "info": info.flatMap { (value: Info) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -95,15 +107,6 @@ public final class ArticleQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
-        }
-      }
-
-      public var info: Info? {
-        get {
-          return (resultMap["info"] as? ResultMap).flatMap { Info(unsafeResultMap: $0) }
-        }
-        set {
-          resultMap.updateValue(newValue?.resultMap, forKey: "info")
         }
       }
 
@@ -116,72 +119,12 @@ public final class ArticleQuery: GraphQLQuery {
         }
       }
 
-      public struct Info: GraphQLSelectionSet {
-        public static let possibleTypes: [String] = ["ArticleInfo"]
-
-        public static var selections: [GraphQLSelection] {
-          return [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("title", type: .nonNull(.scalar(String.self))),
-            GraphQLField("imagePath", type: .nonNull(.scalar(String.self))),
-            GraphQLField("nice", type: .nonNull(.scalar(Int.self))),
-            GraphQLField("context", type: .nonNull(.scalar(String.self))),
-          ]
+      public var info: Info? {
+        get {
+          return (resultMap["info"] as? ResultMap).flatMap { Info(unsafeResultMap: $0) }
         }
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(title: String, imagePath: String, nice: Int, context: String) {
-          self.init(unsafeResultMap: ["__typename": "ArticleInfo", "title": title, "imagePath": imagePath, "nice": nice, "context": context])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        public var title: String {
-          get {
-            return resultMap["title"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "title")
-          }
-        }
-
-        public var imagePath: String {
-          get {
-            return resultMap["imagePath"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "imagePath")
-          }
-        }
-
-        public var nice: Int {
-          get {
-            return resultMap["nice"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "nice")
-          }
-        }
-
-        public var context: String {
-          get {
-            return resultMap["context"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "context")
-          }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "info")
         }
       }
 
@@ -240,6 +183,213 @@ public final class ArticleQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "description")
+          }
+        }
+      }
+
+      public struct Info: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["ArticleInfo"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(String.self))),
+            GraphQLField("title", type: .nonNull(.scalar(String.self))),
+            GraphQLField("imagePath", type: .nonNull(.scalar(String.self))),
+            GraphQLField("nice", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("context", type: .nonNull(.scalar(String.self))),
+            GraphQLField("userStatus", type: .object(UserStatus.selections)),
+            GraphQLField("comment", type: .list(.object(Comment.selections))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: String, title: String, imagePath: String, nice: Int, context: String, userStatus: UserStatus? = nil, comment: [Comment?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "ArticleInfo", "id": id, "title": title, "imagePath": imagePath, "nice": nice, "context": context, "userStatus": userStatus.flatMap { (value: UserStatus) -> ResultMap in value.resultMap }, "comment": comment.flatMap { (value: [Comment?]) -> [ResultMap?] in value.map { (value: Comment?) -> ResultMap? in value.flatMap { (value: Comment) -> ResultMap in value.resultMap } } }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: String {
+          get {
+            return resultMap["id"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var title: String {
+          get {
+            return resultMap["title"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "title")
+          }
+        }
+
+        public var imagePath: String {
+          get {
+            return resultMap["imagePath"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "imagePath")
+          }
+        }
+
+        public var nice: Int {
+          get {
+            return resultMap["nice"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "nice")
+          }
+        }
+
+        public var context: String {
+          get {
+            return resultMap["context"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "context")
+          }
+        }
+
+        public var userStatus: UserStatus? {
+          get {
+            return (resultMap["userStatus"] as? ResultMap).flatMap { UserStatus(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "userStatus")
+          }
+        }
+
+        public var comment: [Comment?]? {
+          get {
+            return (resultMap["comment"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Comment?] in value.map { (value: ResultMap?) -> Comment? in value.flatMap { (value: ResultMap) -> Comment in Comment(unsafeResultMap: value) } } }
+          }
+          set {
+            resultMap.updateValue(newValue.flatMap { (value: [Comment?]) -> [ResultMap?] in value.map { (value: Comment?) -> ResultMap? in value.flatMap { (value: Comment) -> ResultMap in value.resultMap } } }, forKey: "comment")
+          }
+        }
+
+        public struct UserStatus: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["ArticleUserInfo"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("nice", type: .nonNull(.scalar(Bool.self))),
+              GraphQLField("list", type: .nonNull(.scalar(Bool.self))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(nice: Bool, list: Bool) {
+            self.init(unsafeResultMap: ["__typename": "ArticleUserInfo", "nice": nice, "list": list])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var nice: Bool {
+            get {
+              return resultMap["nice"]! as! Bool
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "nice")
+            }
+          }
+
+          public var list: Bool {
+            get {
+              return resultMap["list"]! as! Bool
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "list")
+            }
+          }
+        }
+
+        public struct Comment: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Comment"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .nonNull(.scalar(String.self))),
+              GraphQLField("image", type: .nonNull(.scalar(String.self))),
+              GraphQLField("comment", type: .nonNull(.scalar(String.self))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String, image: String, comment: String) {
+            self.init(unsafeResultMap: ["__typename": "Comment", "name": name, "image": image, "comment": comment])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var name: String {
+            get {
+              return resultMap["name"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+
+          public var image: String {
+            get {
+              return resultMap["image"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "image")
+            }
+          }
+
+          public var comment: String {
+            get {
+              return resultMap["comment"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "comment")
+            }
           }
         }
       }

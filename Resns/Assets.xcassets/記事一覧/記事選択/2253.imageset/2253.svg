@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="241" height="40" viewBox="0 0 241 40">
+  <g id="グループ_2253" data-name="グループ 2253" transform="translate(4398 11097)">
+    <g id="長方形_2356" data-name="長方形 2356" transform="translate(-4398 -11097)" fill="#9ba0aa" stroke="#9ba0aa" stroke-width="1">
+      <rect width="241" height="40" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="240" height="39" rx="4.5" fill="none"/>
+    </g>
+    <text id="記事" transform="translate(-4344 -11083)" fill="#fff" font-size="12" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="2" y="11">記事</tspan></text>
+  </g>
+</svg>

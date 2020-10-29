@@ -14,4 +14,10 @@ class NewsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    
+    
+    @IBAction func newsImageTap(_ sender: Any) {
+        
+    }
+    
 }

@@ -12,14 +12,22 @@
         <!--News View Controller-->
         <scene sceneID="m7k-ep-BM5">
             <objects>
-                <viewController storyboardIdentifier="NewsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K82-S5-AhE" customClass="NewsViewController" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsScreen" id="K82-S5-AhE" customClass="NewsViewController" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dtU-IK-akc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="W3i-A7-i9f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="35S-XR-GDC"/>
+                    <navigationItem key="navigationItem" id="35S-XR-GDC">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="fmL-sP-r4Q">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t7T-ji-pNO">
+                                <rect key="frame" x="-23" y="-15" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="1-1-10"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uv7-g3-Sha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,6 +53,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1-1-10" width="33.666667938232422" height="33.666667938232422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="53" viewBox="0 0 37 53">
+  <g id="グループ_2335" data-name="グループ 2335" transform="translate(-270 -438)">
+    <text id="すき" transform="translate(276 479)" fill="#9ba0aa" font-size="12" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="0" y="11">すき</tspan></text>
+    <g id="グループ_2123" data-name="グループ 2123" transform="translate(-31 42)">
+      <path id="パス_807" data-name="パス 807" d="M17.177,1.172A5.227,5.227,0,0,0,14.723.082a6.9,6.9,0,0,0-5.3,1.426A6.691,6.691,0,0,0,4.22.082a5.268,5.268,0,0,0-2.552,1.09C-.688,3.185-.59,6.2,1.864,8.553c2.258,2.181,4.515,4.361,6.675,6.458a1.229,1.229,0,0,0,.785.252h.2a1.229,1.229,0,0,0,.785-.252l.785-.755c1.963-1.929,3.926-3.774,5.89-5.7C19.435,6.2,19.533,3.1,17.177,1.172Z" transform="translate(310.289 408.217)" fill="none" stroke="#707070" stroke-width="2"/>
+      <g id="楕円形_4" data-name="楕円形 4" transform="translate(301 396)" fill="none" stroke="#707070" stroke-width="2">
+        <circle cx="18.5" cy="18.5" r="18.5" stroke="none"/>
+        <circle cx="18.5" cy="18.5" r="17.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

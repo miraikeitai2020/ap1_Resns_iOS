@@ -1,17 +1,25 @@
-
-query Article($articleid:String!){
-  article(articleid:$articleid) {
-    info{
-      title
-      imagePath
-      nice
-      context
-    }
-
+query Article($articleid: String!){
+  article(articleid: $articleid){
     errors{
       code
       message
       description
+    }
+    info{
+      id
+      title
+      imagePath
+      nice
+      context
+      userStatus{
+        nice
+        list
+      }
+      comment{
+        name
+        image
+        comment
+      }
     }
   }
 }
