@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0038AD8D254C1AF000AA77CE /* GenreSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0038AD8C254C1AF000AA77CE /* GenreSelect.storyboard */; };
+		0038ADA8254D922300AA77CE /* ProfileCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038ADA4254D922300AA77CE /* ProfileCheckViewController.swift */; };
+		0038ADA9254D922300AA77CE /* SexualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038ADA5254D922300AA77CE /* SexualViewController.swift */; };
+		0038ADAB254D922300AA77CE /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038ADA7254D922300AA77CE /* AgeViewController.swift */; };
+		0038ADAE254D924400AA77CE /* Sexual.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0038ADAD254D924400AA77CE /* Sexual.storyboard */; };
+		0038ADB2254D969E00AA77CE /* Age.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0038ADB1254D969E00AA77CE /* Age.storyboard */; };
+		0038ADB5254EC98B00AA77CE /* GenreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038ADB4254EC98A00AA77CE /* GenreSelectViewController.swift */; };
+		0038ADB9254EDA4600AA77CE /* ProfileCheckSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0038ADB8254EDA4600AA77CE /* ProfileCheckSelect.storyboard */; };
 		007BE1052545E182001203EF /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BE1042545E182001203EF /* NewsViewController.swift */; };
 		007BE1092545E9DC001203EF /* View_readme in Resources */ = {isa = PBXBuildFile; fileRef = 007BE1082545E9DC001203EF /* View_readme */; };
 		007BE10E2545EA96001203EF /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BE10C2545EA96001203EF /* NewsCollectionViewCell.swift */; };
@@ -43,6 +51,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0038AD8C254C1AF000AA77CE /* GenreSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenreSelect.storyboard; sourceTree = "<group>"; };
+		0038ADA4254D922300AA77CE /* ProfileCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCheckViewController.swift; sourceTree = "<group>"; };
+		0038ADA5254D922300AA77CE /* SexualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SexualViewController.swift; sourceTree = "<group>"; };
+		0038ADA7254D922300AA77CE /* AgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
+		0038ADAD254D924400AA77CE /* Sexual.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sexual.storyboard; sourceTree = "<group>"; };
+		0038ADB1254D969E00AA77CE /* Age.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Age.storyboard; sourceTree = "<group>"; };
+		0038ADB4254EC98A00AA77CE /* GenreSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenreSelectViewController.swift; path = "../../../../ap1予備/Resns/ViewController/Login_Before/GenreSelectViewController.swift"; sourceTree = "<group>"; };
+		0038ADB8254EDA4600AA77CE /* ProfileCheckSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileCheckSelect.storyboard; sourceTree = "<group>"; };
 		005168CB48534AA1DE993A25 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		007BE1042545E182001203EF /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		007BE1082545E9DC001203EF /* View_readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View_readme; sourceTree = "<group>"; };
@@ -99,6 +115,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0038AD87254C1A2200AA77CE /* Login_Before */ = {
+			isa = PBXGroup;
+			children = (
+				0038AD8C254C1AF000AA77CE /* GenreSelect.storyboard */,
+				0038ADAD254D924400AA77CE /* Sexual.storyboard */,
+				0038ADB1254D969E00AA77CE /* Age.storyboard */,
+				0038ADB8254EDA4600AA77CE /* ProfileCheckSelect.storyboard */,
+			);
+			path = Login_Before;
+			sourceTree = "<group>";
+		};
+		0038ADA3254D922300AA77CE /* Login_Before */ = {
+			isa = PBXGroup;
+			children = (
+				0038ADA4254D922300AA77CE /* ProfileCheckViewController.swift */,
+				0038ADA5254D922300AA77CE /* SexualViewController.swift */,
+				0038ADB4254EC98A00AA77CE /* GenreSelectViewController.swift */,
+				0038ADA7254D922300AA77CE /* AgeViewController.swift */,
+			);
+			path = Login_Before;
+			sourceTree = "<group>";
+		};
 		007BE1032545E164001203EF /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +345,7 @@
 		F26CEC41BBF5B7F8C7838876 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0038ADA3254D922300AA77CE /* Login_Before */,
 				B30CC9B32223041D224EB579 /* Login_After */,
 			);
 			path = ViewController;
@@ -334,6 +373,7 @@
 		F91A21864EBE0C98C203ADF8 /* Storyborad */ = {
 			isa = PBXGroup;
 			children = (
+				0038AD87254C1A2200AA77CE /* Login_Before */,
 				20C623C79F632115449104E8 /* Storyboard_readme */,
 				524BA7A4519B2998E9A564A9 /* Login_After */,
 			);
@@ -422,6 +462,7 @@
 				12E98AED0CF6D6A466DE5CB8 /* Data_readme.txt in Resources */,
 				007BE1092545E9DC001203EF /* View_readme in Resources */,
 				E85613C080605AD43A72A928 /* List.storyboard in Resources */,
+				0038ADB9254EDA4600AA77CE /* ProfileCheckSelect.storyboard in Resources */,
 				1FEC745474DD47DED1EA4D4A /* Model_readme.txt in Resources */,
 				AB80CB85254344360094DB65 /* Acount.storyboard in Resources */,
 				007BE11F25471803001203EF /* Home.storyboard in Resources */,
@@ -430,7 +471,10 @@
 				AB80CB3A254247DB0094DB65 /* LaunchScreen.storyboard in Resources */,
 				007BE1142545EE18001203EF /* News.storyboard in Resources */,
 				350571287F15959B9014D4A6 /* MainTabBar.storyboard in Resources */,
+				0038ADB2254D969E00AA77CE /* Age.storyboard in Resources */,
+				0038ADAE254D924400AA77CE /* Sexual.storyboard in Resources */,
 				007BE10F2545EA96001203EF /* NewsCollectionViewCell.xib in Resources */,
+				0038AD8D254C1AF000AA77CE /* GenreSelect.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,8 +546,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8811EF3E006DB1576E0EDBCF /* AcountViewController.swift in Sources */,
+				0038ADB5254EC98B00AA77CE /* GenreSelectViewController.swift in Sources */,
+				0038ADA9254D922300AA77CE /* SexualViewController.swift in Sources */,
 				0D38CF5B3B87A833941B33E8 /* AppDelegate.swift in Sources */,
 				67584FF4D297C461D2F2ABA0 /* HomeViewController.swift in Sources */,
+				0038ADAB254D922300AA77CE /* AgeViewController.swift in Sources */,
 				76D871097446E65BEACE03F3 /* ListViewController.swift in Sources */,
 				BD117BEAC6806EA123BF9854 /* MainTabBarAnimations.swift in Sources */,
 				112AC79E0EDFC460B4EE3319 /* MainTabBarController.swift in Sources */,
@@ -517,6 +564,7 @@
 				007BE1052545E182001203EF /* NewsViewController.swift in Sources */,
 				1BB2CFCF3CB6C224246D30FF /* UIColorExtension.swift in Sources */,
 				C8EEBCCF4178F3D45176461F /* UITableViewExtension.swift in Sources */,
+				0038ADA8254D922300AA77CE /* ProfileCheckViewController.swift in Sources */,
 				ABD4DA0525442ECC00C0AA64 /* SceneDelegate.swift in Sources */,
 				4DB2B7735FCC489599F1D005 /* UIViewControllerExtension.swift in Sources */,
 			);

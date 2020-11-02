@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="YC4-9W-s1F">
             <objects>
-                <viewController id="gpR-4u-Oci" customClass="HomeViewController" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gpR-4u-Oci" customClass="HomeViewController" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RgN-9b-AkO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,10 +69,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="kodoku" width="259" height="194"/>
-        <image name="koinaka" width="512" height="362"/>
-        <image name="kouetu" width="667" height="375"/>
-        <image name="title-752" width="752" height="423"/>
+        <image name="kodoku" width="86.333335876464844" height="64.666664123535156"/>
+        <image name="koinaka" width="170.66667175292969" height="120.66666412353516"/>
+        <image name="kouetu" width="222.33332824707031" height="125"/>
+        <image name="title-752" width="250.66667175292969" height="141"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

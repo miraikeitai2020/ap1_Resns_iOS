@@ -26,9 +26,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="389" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mcb-Ey-AJp" appends="YES" id="1TI-6M-HGG"/>
-                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -37,13 +34,8 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="389" height="278"/>
-            <point key="canvasLocation" x="-104" y="-7"/>
+            <point key="canvasLocation" x="-105.07246376811595" y="-7.3660714285714279"/>
         </collectionViewCell>
-        <tapGestureRecognizer id="mcb-Ey-AJp">
-            <connections>
-                <action selector="newsImageTap:" destination="gTV-IL-0wX" id="VhE-3P-zbk"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

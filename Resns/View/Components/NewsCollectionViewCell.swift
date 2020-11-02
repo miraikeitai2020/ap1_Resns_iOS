@@ -16,8 +16,6 @@ class NewsCollectionViewCell: UICollectionViewCell {
 
     
     
-    @IBAction func newsImageTap(_ sender: Any) {
-        
-    }
+    
     
 }

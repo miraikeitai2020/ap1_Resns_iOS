@@ -45,8 +45,10 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate{
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         
-        
+        // 背景を灰色に
         self.view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        // 戻るボタンを削除する処理
+        self.navigationItem.hidesBackButton = true
         
         // GenreButton1にセットする画像の大きさ変更
         GenreButton1.imageView?.contentMode = .scaleAspectFit
