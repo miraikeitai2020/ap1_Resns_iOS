@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // 各ボタンの宣言
     let ShareButton  = UIButton(type: .custom)
@@ -130,18 +130,16 @@ class NewsViewController: UIViewController {
         CommentButton.contentHorizontalAlignment = .fill
         CommentButton.contentVerticalAlignment = .fill
         
-        
-        
-        
-        
+        //各フラグ設定
+        var flg_share = false
+        var flg_list = false
+        var flg_good = false
         
         // ShareButtonを生成
         ShareButton.frame = CGRect(x: 60, y: 445, width: 55, height: 55);
-        // ShareButtonに画像を設定
-        ShareButton.setImage(UIImage(named: "1-1-11"), for: UIControl.State())
-        // ListButtonを追加
+        ShareButton.setImage(UIImage(named: "2-1-7"), for: UIControl.State())
         self.view.addSubview(ShareButton)
-        
+       
         // ListButtonを生成
         ListButton.frame = CGRect(x: 180, y: 450, width: 50, height: 50);
         // ListButtonに画像を設定

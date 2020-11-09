@@ -29,6 +29,9 @@
 		7DC11DA8555F309D81B537A3 /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD89E85D206372DEB4B577A1 /* NSObjectProtocolExtension.swift */; };
 		8811EF3E006DB1576E0EDBCF /* AcountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D296FFEF7B136E7BD47892C /* AcountViewController.swift */; };
 		AB5B68352543F9E6000BEC88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B68342543F9E6000BEC88 /* API.swift */; };
+		AB5E08EC25510EAC004AA002 /* Presenter.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB5E08EB25510EAC004AA002 /* Presenter.txt */; };
+		AB5E08F025510F46004AA002 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E08EE25510F46004AA002 /* ArticlesPresenter.swift */; };
+		AB5E08F125510F46004AA002 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E08EF25510F46004AA002 /* HomePresenter.swift */; };
 		AB80CB3A254247DB0094DB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB80CB39254247DB0094DB65 /* LaunchScreen.storyboard */; };
 		AB80CB85254344360094DB65 /* Acount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB80CB84254344360094DB65 /* Acount.storyboard */; };
 		ABD4DA01254429FD00C0AA64 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DA00254429FD00C0AA64 /* Network.swift */; };
@@ -72,6 +75,9 @@
 		A974E45F9904BE0C3DBC2928 /* Pods-Resns.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resns.debug.xcconfig"; path = "Target Support Files/Pods-Resns/Pods-Resns.debug.xcconfig"; sourceTree = "<group>"; };
 		AB5B68322543F8A4000BEC88 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		AB5B68342543F9E6000BEC88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AB5E08EB25510EAC004AA002 /* Presenter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Presenter.txt; sourceTree = "<group>"; };
+		AB5E08EE25510F46004AA002 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
+		AB5E08EF25510F46004AA002 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		AB80CB39254247DB0094DB65 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB80CB84254344360094DB65 /* Acount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Acount.storyboard; sourceTree = "<group>"; };
 		ABD01AB025455A9400139492 /* Article.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Article.graphql; sourceTree = "<group>"; };
@@ -243,6 +249,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AB5E08EA25510EAC004AA002 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB5E08EE25510F46004AA002 /* ArticlesPresenter.swift */,
+				AB5E08EF25510F46004AA002 /* HomePresenter.swift */,
+				AB5E08EB25510EAC004AA002 /* Presenter.txt */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		AB80CB38254247C60094DB65 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +368,7 @@
 				D0A52DE63EAA7F80C22E0132 /* Signup.graphql */,
 				EB1586939869D14148BC2CC6 /* Assets.xcassets */,
 				36180B377DC661F432BE88FF /* Info.plist */,
+				AB5E08EA25510EAC004AA002 /* Presenter */,
 				007BE1072545E9DC001203EF /* View */,
 				8B7578C192FAD5F9C9F7EAB6 /* Data */,
 				F8762A60502CE5230EBA9ED3 /* Enum */,
@@ -418,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57CC75EB12EDE5BB9FA1758 /* Articles.graphql in Resources */,
+				AB5E08EC25510EAC004AA002 /* Presenter.txt in Resources */,
 				0D186BFFBB343C40DEDD785D /* Assets.xcassets in Resources */,
 				12E98AED0CF6D6A466DE5CB8 /* Data_readme.txt in Resources */,
 				007BE1092545E9DC001203EF /* View_readme in Resources */,
@@ -504,9 +522,11 @@
 				8811EF3E006DB1576E0EDBCF /* AcountViewController.swift in Sources */,
 				0D38CF5B3B87A833941B33E8 /* AppDelegate.swift in Sources */,
 				67584FF4D297C461D2F2ABA0 /* HomeViewController.swift in Sources */,
+				AB5E08F125510F46004AA002 /* HomePresenter.swift in Sources */,
 				76D871097446E65BEACE03F3 /* ListViewController.swift in Sources */,
 				BD117BEAC6806EA123BF9854 /* MainTabBarAnimations.swift in Sources */,
 				112AC79E0EDFC460B4EE3319 /* MainTabBarController.swift in Sources */,
+				AB5E08F025510F46004AA002 /* ArticlesPresenter.swift in Sources */,
 				13E5E0D2CAEBC74E79244375 /* MainTabBarItems.swift in Sources */,
 				007BE10E2545EA96001203EF /* NewsCollectionViewCell.swift in Sources */,
 				7DC11DA8555F309D81B537A3 /* NSObjectProtocolExtension.swift in Sources */,

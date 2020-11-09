@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        /*Network.shared.apollo.fetch(query: ArticleQuery(articleid:"20")) { result in
+        Network.shared.apollo.fetch(query: ArticleQuery(articleid: "11" )) { result in
             
             
             switch result{
@@ -54,8 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             case .failure(let error):
                 print(error)
+                
             }
-        }*/
+        }
     
         return true
     }
