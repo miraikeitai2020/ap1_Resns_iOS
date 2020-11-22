@@ -228,10 +228,10 @@ class ProfileCheckSelectViewController: UIViewController, UIGestureRecognizerDel
             //if sender.state == .ended {
                 
                 // HomeStoryboardのインスタンス取得
-                let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
                 
                 // 遷移先HomeViewControllerのインスタンス取得
-                let nextView = storyboard.instantiateViewController(identifier: "HomeScreen") as! HomeViewController
+                let nextView = storyboard.instantiateViewController(identifier: "MainTabBar") as! MainTabBarController
                 
                 // 画面遷移(プッシュ遷移)
                 self.navigationController?.pushViewController(nextView, animated: true)

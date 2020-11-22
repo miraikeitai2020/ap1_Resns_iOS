@@ -19,21 +19,21 @@ public final class ArticleQuery: GraphQLQuery {
         }
         info {
           __typename
-          id
           title
           imagePath
           nice
           context
+          tags
           userStatus {
             __typename
             nice
             list
           }
-          comment {
+          comments {
             __typename
-            name
-            image
-            comment
+            userName
+            userImage
+            contents
           }
         }
       }
@@ -193,13 +193,13 @@ public final class ArticleQuery: GraphQLQuery {
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("id", type: .nonNull(.scalar(String.self))),
             GraphQLField("title", type: .nonNull(.scalar(String.self))),
             GraphQLField("imagePath", type: .nonNull(.scalar(String.self))),
             GraphQLField("nice", type: .nonNull(.scalar(Int.self))),
             GraphQLField("context", type: .nonNull(.scalar(String.self))),
+            GraphQLField("tags", type: .list(.scalar(String.self))),
             GraphQLField("userStatus", type: .object(UserStatus.selections)),
-            GraphQLField("comment", type: .list(.object(Comment.selections))),
+            GraphQLField("comments", type: .list(.object(Comment.selections))),
           ]
         }
 
@@ -209,8 +209,8 @@ public final class ArticleQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: String, title: String, imagePath: String, nice: Int, context: String, userStatus: UserStatus? = nil, comment: [Comment?]? = nil) {
-          self.init(unsafeResultMap: ["__typename": "ArticleInfo", "id": id, "title": title, "imagePath": imagePath, "nice": nice, "context": context, "userStatus": userStatus.flatMap { (value: UserStatus) -> ResultMap in value.resultMap }, "comment": comment.flatMap { (value: [Comment?]) -> [ResultMap?] in value.map { (value: Comment?) -> ResultMap? in value.flatMap { (value: Comment) -> ResultMap in value.resultMap } } }])
+        public init(title: String, imagePath: String, nice: Int, context: String, tags: [String?]? = nil, userStatus: UserStatus? = nil, comments: [Comment?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "ArticleInfo", "title": title, "imagePath": imagePath, "nice": nice, "context": context, "tags": tags, "userStatus": userStatus.flatMap { (value: UserStatus) -> ResultMap in value.resultMap }, "comments": comments.flatMap { (value: [Comment?]) -> [ResultMap?] in value.map { (value: Comment?) -> ResultMap? in value.flatMap { (value: Comment) -> ResultMap in value.resultMap } } }])
         }
 
         public var __typename: String {
@@ -219,15 +219,6 @@ public final class ArticleQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        public var id: String {
-          get {
-            return resultMap["id"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "id")
           }
         }
 
@@ -267,6 +258,15 @@ public final class ArticleQuery: GraphQLQuery {
           }
         }
 
+        public var tags: [String?]? {
+          get {
+            return resultMap["tags"] as? [String?]
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "tags")
+          }
+        }
+
         public var userStatus: UserStatus? {
           get {
             return (resultMap["userStatus"] as? ResultMap).flatMap { UserStatus(unsafeResultMap: $0) }
@@ -276,12 +276,12 @@ public final class ArticleQuery: GraphQLQuery {
           }
         }
 
-        public var comment: [Comment?]? {
+        public var comments: [Comment?]? {
           get {
-            return (resultMap["comment"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Comment?] in value.map { (value: ResultMap?) -> Comment? in value.flatMap { (value: ResultMap) -> Comment in Comment(unsafeResultMap: value) } } }
+            return (resultMap["comments"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Comment?] in value.map { (value: ResultMap?) -> Comment? in value.flatMap { (value: ResultMap) -> Comment in Comment(unsafeResultMap: value) } } }
           }
           set {
-            resultMap.updateValue(newValue.flatMap { (value: [Comment?]) -> [ResultMap?] in value.map { (value: Comment?) -> ResultMap? in value.flatMap { (value: Comment) -> ResultMap in value.resultMap } } }, forKey: "comment")
+            resultMap.updateValue(newValue.flatMap { (value: [Comment?]) -> [ResultMap?] in value.map { (value: Comment?) -> ResultMap? in value.flatMap { (value: Comment) -> ResultMap in value.resultMap } } }, forKey: "comments")
           }
         }
 
@@ -340,9 +340,9 @@ public final class ArticleQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("name", type: .nonNull(.scalar(String.self))),
-              GraphQLField("image", type: .nonNull(.scalar(String.self))),
-              GraphQLField("comment", type: .nonNull(.scalar(String.self))),
+              GraphQLField("userName", type: .nonNull(.scalar(String.self))),
+              GraphQLField("userImage", type: .nonNull(.scalar(String.self))),
+              GraphQLField("contents", type: .nonNull(.scalar(String.self))),
             ]
           }
 
@@ -352,8 +352,8 @@ public final class ArticleQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(name: String, image: String, comment: String) {
-            self.init(unsafeResultMap: ["__typename": "Comment", "name": name, "image": image, "comment": comment])
+          public init(userName: String, userImage: String, contents: String) {
+            self.init(unsafeResultMap: ["__typename": "Comment", "userName": userName, "userImage": userImage, "contents": contents])
           }
 
           public var __typename: String {
@@ -365,30 +365,30 @@ public final class ArticleQuery: GraphQLQuery {
             }
           }
 
-          public var name: String {
+          public var userName: String {
             get {
-              return resultMap["name"]! as! String
+              return resultMap["userName"]! as! String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "name")
+              resultMap.updateValue(newValue, forKey: "userName")
             }
           }
 
-          public var image: String {
+          public var userImage: String {
             get {
-              return resultMap["image"]! as! String
+              return resultMap["userImage"]! as! String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "image")
+              resultMap.updateValue(newValue, forKey: "userImage")
             }
           }
 
-          public var comment: String {
+          public var contents: String {
             get {
-              return resultMap["comment"]! as! String
+              return resultMap["contents"]! as! String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "comment")
+              resultMap.updateValue(newValue, forKey: "contents")
             }
           }
         }
@@ -410,6 +410,8 @@ public final class ArticlesQuery: GraphQLQuery {
           title
           ImagePath
           tags
+          synopsis
+          nice
         }
         errors {
           __typename
@@ -466,6 +468,269 @@ public final class ArticlesQuery: GraphQLQuery {
     }
 
     public struct Article: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Articles"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("articles", type: .list(.object(Article.selections))),
+          GraphQLField("errors", type: .list(.object(Error.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(articles: [Article?]? = nil, errors: [Error?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Articles", "articles": articles.flatMap { (value: [Article?]) -> [ResultMap?] in value.map { (value: Article?) -> ResultMap? in value.flatMap { (value: Article) -> ResultMap in value.resultMap } } }, "errors": errors.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var articles: [Article?]? {
+        get {
+          return (resultMap["articles"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Article?] in value.map { (value: ResultMap?) -> Article? in value.flatMap { (value: ResultMap) -> Article in Article(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Article?]) -> [ResultMap?] in value.map { (value: Article?) -> ResultMap? in value.flatMap { (value: Article) -> ResultMap in value.resultMap } } }, forKey: "articles")
+        }
+      }
+
+      public var errors: [Error?]? {
+        get {
+          return (resultMap["errors"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Error?] in value.map { (value: ResultMap?) -> Error? in value.flatMap { (value: ResultMap) -> Error in Error(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Error?]) -> [ResultMap?] in value.map { (value: Error?) -> ResultMap? in value.flatMap { (value: Error) -> ResultMap in value.resultMap } } }, forKey: "errors")
+        }
+      }
+
+      public struct Article: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["ArticleHeader"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(String.self))),
+            GraphQLField("title", type: .nonNull(.scalar(String.self))),
+            GraphQLField("ImagePath", type: .nonNull(.scalar(String.self))),
+            GraphQLField("tags", type: .list(.scalar(String.self))),
+            GraphQLField("synopsis", type: .nonNull(.scalar(String.self))),
+            GraphQLField("nice", type: .nonNull(.scalar(Int.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: String, title: String, imagePath: String, tags: [String?]? = nil, synopsis: String, nice: Int) {
+          self.init(unsafeResultMap: ["__typename": "ArticleHeader", "id": id, "title": title, "ImagePath": imagePath, "tags": tags, "synopsis": synopsis, "nice": nice])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: String {
+          get {
+            return resultMap["id"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var title: String {
+          get {
+            return resultMap["title"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "title")
+          }
+        }
+
+        public var imagePath: String {
+          get {
+            return resultMap["ImagePath"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "ImagePath")
+          }
+        }
+
+        public var tags: [String?]? {
+          get {
+            return resultMap["tags"] as? [String?]
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "tags")
+          }
+        }
+
+        public var synopsis: String {
+          get {
+            return resultMap["synopsis"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "synopsis")
+          }
+        }
+
+        public var nice: Int {
+          get {
+            return resultMap["nice"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "nice")
+          }
+        }
+      }
+
+      public struct Error: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["ERRORS"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("code", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("message", type: .nonNull(.scalar(String.self))),
+            GraphQLField("description", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(code: Int, message: String, description: String) {
+          self.init(unsafeResultMap: ["__typename": "ERRORS", "code": code, "message": message, "description": description])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var code: Int {
+          get {
+            return resultMap["code"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "code")
+          }
+        }
+
+        public var message: String {
+          get {
+            return resultMap["message"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "message")
+          }
+        }
+
+        public var description: String {
+          get {
+            return resultMap["description"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "description")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class ArticlesFromTagQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query ArticlesFromTag($tag: String!) {
+      articlesFromTag(tag: $tag) {
+        __typename
+        articles {
+          __typename
+          id
+          title
+          ImagePath
+          tags
+        }
+        errors {
+          __typename
+          code
+          message
+          description
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "ArticlesFromTag"
+
+  public var tag: String
+
+  public init(tag: String) {
+    self.tag = tag
+  }
+
+  public var variables: GraphQLMap? {
+    return ["tag": tag]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("articlesFromTag", arguments: ["tag": GraphQLVariable("tag")], type: .nonNull(.object(ArticlesFromTag.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(articlesFromTag: ArticlesFromTag) {
+      self.init(unsafeResultMap: ["__typename": "Query", "articlesFromTag": articlesFromTag.resultMap])
+    }
+
+    public var articlesFromTag: ArticlesFromTag {
+      get {
+        return ArticlesFromTag(unsafeResultMap: resultMap["articlesFromTag"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "articlesFromTag")
+      }
+    }
+
+    public struct ArticlesFromTag: GraphQLSelectionSet {
       public static let possibleTypes: [String] = ["Articles"]
 
       public static var selections: [GraphQLSelection] {

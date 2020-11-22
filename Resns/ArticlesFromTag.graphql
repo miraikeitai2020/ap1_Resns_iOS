@@ -1,0 +1,16 @@
+
+query ArticlesFromTag($tag: String!){
+  articlesFromTag(tag: $tag){
+    articles{
+      id
+      title
+      ImagePath
+      tags
+    }
+    errors{
+      code
+      message
+      description
+    }
+  }
+}

@@ -14,7 +14,7 @@ extension UIViewController {
 
         // NavigationControllerの配色に関するデザイン調整を行う
         self.navigationController!.navigationBar.isTranslucent = false
-        self.navigationController!.navigationBar.barTintColor = UIColor(code: "#ffffff")
+        self.navigationController!.navigationBar.barTintColor = UIColor(code: "#ffdab9")
         self.navigationController!.navigationBar.titleTextAttributes = attributes
 
         // タイトルを入れる

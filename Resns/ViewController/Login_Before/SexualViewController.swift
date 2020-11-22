@@ -12,6 +12,8 @@ import UIKit
 
 class SexualViewController: UIViewController, UIGestureRecognizerDelegate {
     
+    
+    
     // 男性ボタン
     let Male = UIButton(type: .custom)
     

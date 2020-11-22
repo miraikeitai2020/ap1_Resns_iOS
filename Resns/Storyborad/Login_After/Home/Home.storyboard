@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,37 +18,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="koinaka" translatesAutoresizingMaskIntoConstraints="NO" id="lwp-Ac-aGE">
-                                <rect key="frame" x="20" y="225" width="177" height="120"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eSe-hi-SWn">
+                                <rect key="frame" x="0.0" y="206" width="414" height="690"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title-752" translatesAutoresizingMaskIntoConstraints="NO" id="5Bv-qT-jNJ">
-                                <rect key="frame" x="217" y="225" width="177" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kouetu" translatesAutoresizingMaskIntoConstraints="NO" id="LV2-dL-LhD">
-                                <rect key="frame" x="20" y="448" width="177" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kodoku" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-KQ-Y4N">
-                                <rect key="frame" x="217" y="448" width="177" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="B1N-4t-nKr">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xkg-dh-omn" customClass="NewsCollectionViewCell" customModule="Resns" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CRN-Bp-3LX">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uxo-YI-yyt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="heR-OB-bbR"/>
                     <connections>
-                        <outlet property="NewsImage" destination="lwp-Ac-aGE" id="6OS-1Q-NDQ"/>
-                        <outlet property="NewsImage2" destination="5Bv-qT-jNJ" id="QZY-dG-KVA"/>
-                        <outlet property="NewsImage3" destination="LV2-dL-LhD" id="dUh-ub-2x3"/>
-                        <outlet property="NewsImage4" destination="eMo-KQ-Y4N" id="CI2-GZ-LYS"/>
+                        <outlet property="collectionView" destination="eSe-hi-SWn" id="ONy-Oj-aLi"/>
+                        <segue destination="htg-YN-quf" kind="show" identifier="toNewsViewController" id="vln-MQ-giN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNh-Uy-R8R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1800.0000000000002" y="-392.41071428571428"/>
+        </scene>
+        <!--News3 View Controller-->
+        <scene sceneID="Pbw-bs-UfQ">
+            <objects>
+                <viewController id="htg-YN-quf" customClass="News3ViewController" customModule="Resns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SP9-W0-3G1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9cw-lS-TNN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rHk-T0-4z8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rx-WO-8xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877" y="-392"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SZc-fx-Lxt">
@@ -69,10 +89,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="kodoku" width="86.333335876464844" height="64.666664123535156"/>
-        <image name="koinaka" width="170.66667175292969" height="120.66666412353516"/>
-        <image name="kouetu" width="222.33332824707031" height="125"/>
-        <image name="title-752" width="250.66667175292969" height="141"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

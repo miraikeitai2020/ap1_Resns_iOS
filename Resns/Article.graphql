@@ -1,3 +1,4 @@
+
 query Article($articleid: String!){
   article(articleid: $articleid){
     errors{
@@ -6,19 +7,19 @@ query Article($articleid: String!){
       description
     }
     info{
-      id
       title
       imagePath
       nice
       context
+      tags
       userStatus{
         nice
         list
       }
-      comment{
-        name
-        image
-        comment
+      comments{
+        userName
+        userImage
+        contents
       }
     }
   }
