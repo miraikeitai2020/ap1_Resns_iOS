@@ -11,25 +11,25 @@ import Foundation
 import UIKit
 
 class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScrollViewDelegate{
-   
+    
     
     
     @IBOutlet weak var collectionView: UICollectionView!
     //@IBOutlet weak var collectionView: UICollectionView!
     
     // ジャンルButtonを生成
-        // ジャンル１
-        let GenreButton1 = UIButton(type: .custom)
-        // ジャンル2
-        let GenreButton2 = UIButton(type: .custom)
-        // ジャンル3
-        let GenreButton3 = UIButton(type: .custom)
-        // ジャンル4
-        let GenreButton4 = UIButton(type: .custom)
-        // 年代
-        let YearButton = UIButton(type: .custom)
-        // 月
-        let MonthButton = UIButton(type: .custom)
+    // ジャンル１
+    let GenreButton1 = UIButton(type: .custom)
+    // ジャンル2
+    let GenreButton2 = UIButton(type: .custom)
+    // ジャンル3
+    let GenreButton3 = UIButton(type: .custom)
+    // ジャンル4
+    let GenreButton4 = UIButton(type: .custom)
+    // 年代
+    let YearButton = UIButton(type: .custom)
+    // 月
+    let MonthButton = UIButton(type: .custom)
     
     // スワイプ毎の上のジャンルボタンの管理
     var flag1: Bool = true
@@ -40,7 +40,11 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
     var models = Model.createModels()
     
     override func viewDidLoad() {
-         super.viewDidLoad()
+        super.viewDidLoad()
+        // 戻るボタンを削除する処理
+        self.navigationItem.hidesBackButton = true
+        // navigationcontrollerを隠す処理
+        navigationController?.setNavigationBarHidden(true, animated: false)
         // xib関係の処理
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -73,27 +77,6 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
         self.view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
         // 戻るボタンを削除する処理
         self.navigationItem.hidesBackButton = true
-        /*
-        // GenreButton1にセットする画像の大きさ変更
-        GenreButton1.imageView?.contentMode = .scaleAspectFit
-        GenreButton1.contentHorizontalAlignment = .fill
-        GenreButton1.contentVerticalAlignment = .fill
-        
-        // GenreButton2セットする画像の大きさ変更
-        GenreButton2.imageView?.contentMode = .scaleAspectFit
-        GenreButton2.contentHorizontalAlignment = .fill
-        GenreButton2.contentVerticalAlignment = .fill
-        
-        // GenreButton3セットする画像の大きさ変更
-        GenreButton3.imageView?.contentMode = .scaleAspectFit
-        GenreButton3.contentHorizontalAlignment = .fill
-        GenreButton3.contentVerticalAlignment = .fill
-
-        // GenreButton4セットする画像の大きさ変更
-        GenreButton4.imageView?.contentMode = .scaleAspectFit
-        GenreButton4.contentHorizontalAlignment = .fill
-        GenreButton4.contentVerticalAlignment = .fill
-        */
         
         //各ジャンルボタンにセットする画像の大きさを変更
         genreButtonChanged()
@@ -172,7 +155,7 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
         GenreButton3.imageView?.contentMode = .scaleAspectFit
         GenreButton3.contentHorizontalAlignment = .fill
         GenreButton3.contentVerticalAlignment = .fill
-
+        
         // GenreButton4セットする画像の大きさ変更
         GenreButton4.imageView?.contentMode = .scaleAspectFit
         GenreButton4.contentHorizontalAlignment = .fill
@@ -334,11 +317,11 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 extension HomeViewController: NewsCollectionViewDelegate {
-   //Buttonをタップした後の処理メソッド
+    //Buttonをタップした後の処理メソッド
     func addButtonTaped(_ sender: UIButton) {
         //dismiss(animated: true, completion: nil)
         print("か過去垢お顔かお顔かお顔かお顔かお")
         print(sender.titleLabel?.text)
-       
+        
     }
 }

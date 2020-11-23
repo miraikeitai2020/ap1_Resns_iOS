@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00053E7B256B29F8007B3A3B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00053E7A256B29F8007B3A3B /* StartViewController.swift */; };
+		00053E7E256B2FF7007B3A3B /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00053E7D256B2FF7007B3A3B /* Start.storyboard */; };
 		0038A5BB2563E49D00CF7F39 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038A5BA2563E49D00CF7F39 /* Model.swift */; };
 		0038A5BE2563E5C700CF7F39 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0038A5BD2563E5C600CF7F39 /* News.storyboard */; };
 		0038AD8D254C1AF000AA77CE /* GenreSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0038AD8C254C1AF000AA77CE /* GenreSelect.storyboard */; };
@@ -69,6 +71,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00053E7A256B29F8007B3A3B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		00053E7D256B2FF7007B3A3B /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		0038A5BA2563E49D00CF7F39 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0038A5BD2563E5C600CF7F39 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		0038AD8C254C1AF000AA77CE /* GenreSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenreSelect.storyboard; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				0038ADAD254D924400AA77CE /* Sexual.storyboard */,
 				0038ADB1254D969E00AA77CE /* Age.storyboard */,
 				0038ADB8254EDA4600AA77CE /* ProfileCheckSelect.storyboard */,
+				00053E7D256B2FF7007B3A3B /* Start.storyboard */,
 			);
 			path = Login_Before;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				0038ADA4254D922300AA77CE /* ProfileCheckViewController.swift */,
 				0038ADA5254D922300AA77CE /* SexualViewController.swift */,
 				0038ADA7254D922300AA77CE /* AgeViewController.swift */,
+				00053E7A256B29F8007B3A3B /* StartViewController.swift */,
 			);
 			path = Login_Before;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				00DDED49255D692800616B4D /* View_readme in Resources */,
 				B57CC75EB12EDE5BB9FA1758 /* Articles.graphql in Resources */,
 				00DDED51255D69A400616B4D /* CommentCollectionViewCell.xib in Resources */,
+				00053E7E256B2FF7007B3A3B /* Start.storyboard in Resources */,
 				0D186BFFBB343C40DEDD785D /* Assets.xcassets in Resources */,
 				009A6630255B1F3F00C2C337 /* News3.storyboard in Resources */,
 				AB5E08F8255121AA004AA002 /* Presenter.txt in Resources */,
@@ -634,6 +641,7 @@
 				735B36E16694A80E280E9229 /* UICollectionViewExtension.swift in Sources */,
 				007BE1052545E182001203EF /* NewsViewController.swift in Sources */,
 				1BB2CFCF3CB6C224246D30FF /* UIColorExtension.swift in Sources */,
+				00053E7B256B29F8007B3A3B /* StartViewController.swift in Sources */,
 				00DDED4A255D692800616B4D /* NewsCollectionViewCell.swift in Sources */,
 				C8EEBCCF4178F3D45176461F /* UITableViewExtension.swift in Sources */,
 				0038ADA8254D922300AA77CE /* ProfileCheckViewController.swift in Sources */,

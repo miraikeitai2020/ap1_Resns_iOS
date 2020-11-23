@@ -36,6 +36,9 @@ class SexualViewController: UIViewController, UIGestureRecognizerDelegate {
     var userDefaults = UserDefaults.standard
     var Sexual: Int = 0
     
+    // ロゴ追加
+    let iconImage = UIImageView(image: UIImage(named: "rogo_katto"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 背景を灰色に変更
@@ -43,6 +46,11 @@ class SexualViewController: UIViewController, UIGestureRecognizerDelegate {
         
         // 戻るボタンを削除する処理
         self.navigationItem.hidesBackButton = true
+        
+        // ロゴ追加の処理
+        let iconImage = UIImageView(image: UIImage(named: "rogo_katto"))
+        iconImage.frame = CGRect(x: 100, y: 100, width: 185, height: 100)
+        self.view.addSubview(iconImage)
         
         // 各ボタンにセットする画像の大きさ変更
         Male.imageView?.contentMode = .scaleAspectFit

@@ -30,18 +30,23 @@ class ProfileCheckSelectViewController: UIViewController, UIGestureRecognizerDel
     //  userDefaultsの定義
     var userDefaults = UserDefaults.standard
     
-    
+    // ロゴ追加
+    let iconImage = UIImageView(image: UIImage(named: "rogo_katto"))
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // navigationcontrollerを隠す処理
+        navigationController?.setNavigationBarHidden(true, animated: false)
         // 戻るボタンを削除する処理
         self.navigationItem.hidesBackButton = true
         
         self.view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
         
-        
+        // ロゴ追加の処理
+        let iconImage = UIImageView(image: UIImage(named: "rogo_katto"))
+        iconImage.frame = CGRect(x: 100, y: 100, width: 185, height: 100)
+        self.view.addSubview(iconImage)
         // 前画面で保持した値の受け取り
         // ジャンル
         let getGenre4:[String] = userDefaults.array(forKey: "Genre4") as! [String]
