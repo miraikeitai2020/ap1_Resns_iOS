@@ -18,6 +18,8 @@ class NewsCollectionViewCell: UICollectionViewCell,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var newsImage: UIImageView!
+    
     @IBOutlet weak var tagButton1: UIButton!
     @IBOutlet weak var tagButton2: UIButton!
     @IBOutlet weak var tagButton3: UIButton!
@@ -29,16 +31,15 @@ class NewsCollectionViewCell: UICollectionViewCell,UIGestureRecognizerDelegate {
         super.awakeFromNib()
         // Initialization code
     }
-    
+    /*
     func setupCell(model: Model) {
         titleLabel.text = model.titleLabel
         tagButton1.setTitle(model.tagLabel1, for: .normal)
         tagButton2.setTitle(model.tagLabel2, for: .normal)
         tagButton3.setTitle(model.tagLabel3, for: .normal)
         tagButton4.setTitle(model.tagLabel4, for: .normal)
-        
     }
-    
+    */
     private func makeSelectedBackgroundView() -> UIView {
         let view = UIView()
         //view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)

@@ -29,11 +29,14 @@ class News3ViewController: UIViewController, UIGestureRecognizerDelegate,UITextF
     var flag3: Bool = false
     
     //Presenter用宣言
+    
     var articleTitle: String!
     var articleImagePath: String!
     var articleNice: Int!
     var articleContext: String!
     var articleComment: [ArticleQuery.Data.Article.Info.Comment?]?
+ 
+    var article: [[ArticleQuery.Data.Article.Info?]?] = []
     
     
     //クロージャー内の宣言
@@ -55,11 +58,18 @@ class News3ViewController: UIViewController, UIGestureRecognizerDelegate,UITextF
     // コメント入力欄作成
     let commentTextField = UITextField()
     
+   
+    var i = 0
     // コメント入力をボタンに
     //let commentAddButton = UIButton(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // navigationcontrollerを復活させる処理
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        //タブバーを隠す処理
+        navigationController?.setToolbarHidden(true, animated: false)
 
         //presenter処理
         let articlePresenter = ArticlePresenter3()
@@ -74,7 +84,8 @@ class News3ViewController: UIViewController, UIGestureRecognizerDelegate,UITextF
             self.articleNice = articleInfo[0]?.nice
             self.articleContext = articleInfo[0]?.context
             self.articleComment = articleInfo[0]?.comments
-            
+            //self.article = articleInfo
+            //self.articles = articlesArticles
             // タイトルの設定
             print("記事タイトル : \(String(describing: self.articleTitle))")
             
@@ -89,9 +100,14 @@ class News3ViewController: UIViewController, UIGestureRecognizerDelegate,UITextF
             
             //記事画像の設定
             print("記事画像URL : \(String(describing: self.articleImagePath))")
+            /*
+            print("記事画像URL : \(String(describing: self.article[0]?[i]?.imagePath))")
             
+            guard let url = URL(string: (self.articles[0]?[indexPath.row]?.imagePath)!) else { return }
+             */
             guard let url = URL(string: self.articleImagePath) else { return }
-            
+ 
+       
             do {
                 let data = try Data(contentsOf: url)
                 self.NewsImage.image = UIImage(data: data)
@@ -150,7 +166,6 @@ class News3ViewController: UIViewController, UIGestureRecognizerDelegate,UITextF
             
             
             print("記事コメント : \(String(describing: self.articleComment))")
-            
             
             
             
@@ -294,18 +309,7 @@ class News3ViewController: UIViewController, UIGestureRecognizerDelegate,UITextF
         OughtSideView.layer.borderWidth = 2       // 枠線の太さを設定する.
         OughtSideView.layer.borderColor = UIColor.gray.cgColor // 枠線の色をグレーに設定する.
         self.view.addSubview(OughtSideView)    // OughtSideViewをViewに追加する.
-        
-        
-        /*
-         // 記事とコメントボタン（行く行くはセグメンテーションに）
-         // CommentButtonを生成
-         CommentButton.frame = CGRect(x: -110, y: 530, width: 650, height: 40);
-         // CommentButtonに画像を設定
-         CommentButton.setImage(UIImage(named: "コメント"), for: UIControl.State())
-         // GoodButtonを追加
-         self.view.addSubview(CommentButton)
-         */
-        
+       
         // セグメント（記事、コメント）
         // セグメントに追加するテキストの設定
         let params = ["記事", "コメント"]
@@ -377,9 +381,25 @@ class News3ViewController: UIViewController, UIGestureRecognizerDelegate,UITextF
         */
         // コメント追加ボタンを追加
         //self.view.addSubview(commentAddButton)
+        
+        // "＜"(戻るボタン）の追加
+        let chevronLeftImage: UIImage? = UIImage(systemName: "chevron.left")
+        let backButton = UIBarButtonItem(image: chevronLeftImage, style: .plain, target: self, action: #selector(onTapBackButton(_:)))
+        navigationItem.leftBarButtonItem = backButton
  
     }
-    
+    // "＜"(戻るボタン）のメソッド
+    @objc func onTapBackButton(_ sender: UIBarButtonItem) {
+        navigationController?.hidesBottomBarWhenPushed = false
+        
+        navigationController?.popViewController( animated: true)
+        // navigationcontrollerを隠す処理
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        //navigationController?.hidesBottomBarWhenPushed = false
+        
+        //self.hidesBottomBarWhenPushed = false
+    }
+
     // セグメントのメソッド
     @objc func segmentChanged(_ segment:UISegmentedControl) {
         switch segment.selectedSegmentIndex {
@@ -502,3 +522,4 @@ extension News3ViewController: UICollectionViewDataSource {
     
     
 }
+

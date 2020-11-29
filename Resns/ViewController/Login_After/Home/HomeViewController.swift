@@ -10,9 +10,24 @@ import Foundation
 
 import UIKit
 
+struct Model{
+    
+    let titleLabel: String?
+    let tagLabel1: String?
+    let tagLabel2: String?
+    let tagLabel3: String?
+    let tagLabel4: String?
+    
+    static func createModels() -> [Model] {
+        return [Model(titleLabel: "ボボボーボボーボボ ", tagLabel1: "ハッシュタグ１",tagLabel2: "ハッシュタグ２",tagLabel3: "ハッシュタグ３",tagLabel4: "ハッシュタグ４"),Model(titleLabel: "ボボボーボボーボボ", tagLabel1: "ハッシュタグ１",tagLabel2: "ハッシュタグ２",tagLabel3: "ハッシュタグ３",tagLabel4: "ハッシュタグ４"),Model(titleLabel: "タイトル", tagLabel1: "ハッシュタグ１",tagLabel2: "ハッシュタグ２",tagLabel3: "ハッシュタグ３",tagLabel4: "ハッシュタグ４"),Model(titleLabel: "タイトル", tagLabel1: "ハッシュタグ１",tagLabel2: "ハッシュタグ２",tagLabel3: "ハッシュタグ３",tagLabel4: "ハッシュタグ４"),Model(titleLabel: "タイトル", tagLabel1: "ハッシュタグ１",tagLabel2: "ハッシュタグ２",tagLabel3: "ハッシュタグ３",tagLabel4: "ハッシュタグ４"),Model(titleLabel: "タイトル", tagLabel1: "ハッシュタグ１",tagLabel2: "ハッシュタグ２",tagLabel3: "ハッシュタグ３",tagLabel4: "ハッシュタグ４"),Model(titleLabel: "タイトル", tagLabel1: "ハッシュタグ１",tagLabel2: "ハッシュタグ２",tagLabel3: "ハッシュタグ３",tagLabel4: "ハッシュタグ４")]
+    }
+}
+
 class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScrollViewDelegate{
-    
-    
+    // 非同期のグループ
+    let dispatchGroup = DispatchGroup()
+    // 並列で実行
+    let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent)
     
     @IBOutlet weak var collectionView: UICollectionView!
     //@IBOutlet weak var collectionView: UICollectionView!
@@ -37,14 +52,28 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
     var flag3: Bool = false
     var flag4: Bool = false
     
+    
+    //var articlesNice: Int!
+    var articles: [[ArticlesQuery.Data.Article.Article?]?] = []
+    
+    
     var models = Model.createModels()
     
+    //presenter処理
+    let homePresenter = HomePresenter()
+    
+    var i = 0
+    var a = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // 戻るボタンを削除する処理
-        self.navigationItem.hidesBackButton = true
+        //self.navigationItem.hidesBackButton = true
         // navigationcontrollerを隠す処理
         navigationController?.setNavigationBarHidden(true, animated: false)
+        //タブバーを表示させる処理
+        //navigationController?.setToolbarHidden(false, animated: false)
+        
         // xib関係の処理
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -58,17 +87,28 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
         //layout.itemSize = CGSize(width:, height: 242)
         collectionView.collectionViewLayout = layout
         view.addSubview(collectionView)
-        
-        //presenter処理
-        let homePresenter = HomePresenter()
-        //循環参照防止のweakself
-        homePresenter.application(completion: { [weak self] articleInfo in
-            
-            guard let self = self else { return }
-            
-            
-            
-        })
+        /*
+        dispatchGroup.enter()
+        dispatchQueue.async {
+            //循環参照防止のweakself
+            self.homePresenter.application(completion: { [weak self] articlesArticles in
+                
+                guard let self = self else { return }
+                
+                //配列のi番目にデータが格納されている
+                //self.articlesId = articlesArticles[0]?[self.i]?.id
+                //self.articlesTitle = articlesArticles[0]?[self.i]?.title
+                //self.articlesImagePath = articlesArticles[0]?[self.i]?.imagePath
+                //self.articlesTags = articlesArticles[0]?[1]?[2]?.tags
+                self.articles = articlesArticles
+                print(self.articles[0]?[self.i]?.title)
+                print(self.articles[0]?.count)
+                //self.articlesNice = articlesArticles[0]?[self.i]?.nice
+                
+                
+            })
+        }
+ */
         //ナビゲーションアイテムのタイトルに画像を設定する
         let imageView = UIImageView(image:UIImage(named:"rogo_katto"))
         imageView.contentMode = .scaleAspectFit
@@ -293,34 +333,125 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
             flag1 = true
         }
     }
+    /*
+     func articlemethod(){
+     //循環参照防止のweakself
+     homePresenter.application(completion: { [weak self] articlesArticles in
+     
+     guard let self = self else { return }
+     
+     //配列のi番目にデータが格納されている
+     self.articlesId = articlesArticles[0]?[self.i]?.id
+     self.articlesTitle = articlesArticles[0]?[self.i]?.title
+     self.articlesImagePath = articlesArticles[0]?[self.i]?.imagePath
+     //self.articlesTags = articlesArticles[0]?[1]?[2]?.tags
+     
+     self.articlesNice = articlesArticles[0]?[self.i]?.nice
+     
+     print(self.articlesId)
+     print(self.articlesTitle)
+     print(self.articlesImagePath)
+     print(self.articlesNice)
+     self.a += 1
+     self.i += 1
+     print(self.a)
+     
+     
+     })
+     
+     }
+     */
 }
+/*
+ extension HomeViewController: UICollectionViewDataSource {
+ 
+ 
+ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+ return models.count
+ }
+ /*
+ func numberOfSections(in tableView: UITableView) -> Int {
+ return 1
+ }
+ 
+ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+ return targetNews.count
+ }
+ */
+ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+ let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+ cell.setupCell(model: models[indexPath.row])
+ 
+ self.a += 1
+ print(self.a)
+ cell.newsCollectionViewDelegate = self
+ //cell.layer.backgroundColor = UIColor.red.cgColor
+ return cell
+ }
+ }
+ */
 
 extension HomeViewController: UICollectionViewDataSource {
     
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 13
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
-        cell.setupCell(model: models[indexPath.row])
+        //cell.titleLabel.text = self.articles[0]?[0]?.title
+        //循環参照防止のweakself
+        self.homePresenter.application(completion: { [weak self] articlesArticles in
+            
+            guard let self = self else { return }
+            
+            //配列のi番目にデータが格納されている
+           
+            self.articles = articlesArticles
+            print(self.articles[0]?[self.i]?.title)
+            print(self.articles[0]?.count)
+            //記事タイトルの設定
+            cell.titleLabel.text = self.articles[0]?[indexPath.row]?.title
+            //記事ハッシュタグの設定
+            cell.tagButton1.setTitle(self.articles[0]?[indexPath.row]?.tags?[0], for: .normal)
+            cell.tagButton2.setTitle(self.articles[0]?[indexPath.row]?.tags?[1], for: .normal)
+            cell.tagButton3.setTitle(self.articles[0]?[indexPath.row]?.tags?[2], for: .normal)
+            cell.tagButton4.setTitle(self.articles[0]?[indexPath.row]?.tags?[3], for: .normal)
+            //記事画像の設定
+            print("記事画像URL : \(String(describing: self.articles[0]?[indexPath.row]?.imagePath))")
+            
+            guard let url = URL(string: (self.articles[0]?[indexPath.row]?.imagePath)!) else { return }
+            //cell.newsImage.image = UIImage(contentsOfFile: (self.articles[0]?[indexPath.row]!.imagePath)!)
+            
+            do {
+                let data = try Data(contentsOf: url)
+                cell.newsImage.image = UIImage(data: data)
+            } catch let err {
+                //画像がない場合デフォルトURLセット
+                print(err)
+            }
+            
+        })
+        
         cell.newsCollectionViewDelegate = self
-        //cell.layer.backgroundColor = UIColor.red.cgColor
+        print(articles.count)
         return cell
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.hidesBottomBarWhenPushed = true
         self.performSegue(withIdentifier: "toNewsViewController", sender: nil)
+       
     }
 }
 extension HomeViewController: NewsCollectionViewDelegate {
     //Buttonをタップした後の処理メソッド
     func addButtonTaped(_ sender: UIButton) {
         //dismiss(animated: true, completion: nil)
-        print("か過去垢お顔かお顔かお顔かお顔かお")
         print(sender.titleLabel?.text)
         
     }

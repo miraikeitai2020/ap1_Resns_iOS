@@ -75,6 +75,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="200" height="242"/>
             <connections>
+                <outlet property="newsImage" destination="woy-Xn-hYz" id="aIc-2E-1Kc"/>
                 <outlet property="tagButton1" destination="DeN-SG-ILl" id="1xa-Zt-xpH"/>
                 <outlet property="tagButton2" destination="bVu-Rl-6AK" id="90U-XC-LBL"/>
                 <outlet property="tagButton3" destination="Z2d-eX-D83" id="uW8-gN-xK7"/>

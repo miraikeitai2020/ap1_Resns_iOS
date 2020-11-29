@@ -23,6 +23,7 @@ class StartViewController: UIViewController, UIGestureRecognizerDelegate  {
         self.view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
         // navigationcontrollerを隠す処理
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
         // ボタンの位置とサイズを設定
         Login.frame = CGRect(x:135, y:350, width:140, height:50)
         // ボタンのタイトルを設定
@@ -73,9 +74,9 @@ class StartViewController: UIViewController, UIGestureRecognizerDelegate  {
     }
     @objc func tappedLogin(_ sender: UITapGestureRecognizer){
         // HomeStoryboardのインスタンス取得
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
         // 遷移先HomeiewControllerのインスタンス取得
-        let nextView = storyboard.instantiateViewController(identifier: "HomeScreen") as! HomeViewController
+        let nextView = storyboard.instantiateViewController(identifier: "MainTabBar") as! MainTabBarController
         // 画面遷移(プッシュ遷移)
         self.navigationController?.pushViewController(nextView, animated: true)
         
