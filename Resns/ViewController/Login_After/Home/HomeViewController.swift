@@ -56,6 +56,8 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
     //var articlesNice: Int!
     var articles: [[ArticlesQuery.Data.Article.Article?]?] = []
     
+    // ロゴ追加
+    let iconImage = UIImageView(image: UIImage(named: "rogo_katto"))
     
     var models = Model.createModels()
     
@@ -67,12 +69,14 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 戻るボタンを削除する処理
-        //self.navigationItem.hidesBackButton = true
+        // ロゴ追加の処理
+        let iconImage = UIImageView(image: UIImage(named: "rogo_katto"))
+        
+        iconImage.frame = CGRect(x: 140, y: 50, width: 120, height: 60)
+        self.view.addSubview(iconImage)
+        
         // navigationcontrollerを隠す処理
         navigationController?.setNavigationBarHidden(true, animated: false)
-        //タブバーを表示させる処理
-        //navigationController?.setToolbarHidden(false, animated: false)
         
         // xib関係の処理
         collectionView.delegate = self
@@ -131,32 +135,32 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
         MonthButton.contentHorizontalAlignment = .fill
         MonthButton.contentVerticalAlignment = .fill
         
-        // ジャンル４
+        // ジャンル４（音楽）
         //x:値減少で左 y:値減少で上
         GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
         // GenreButton4に画像を設定
-        GenreButton4.setImage(UIImage(named: "1-4"), for: UIControl.State())
+        GenreButton4.setImage(UIImage(named: "1-3"), for: UIControl.State())
         // GenreButton3を追加
         self.view.addSubview(GenreButton4)
         
-        // ジャンル３
+        // ジャンル３（エンタメ）
         GenreButton3.frame = CGRect(x: 215, y: 85, width: 90, height: 73);
         // GenreButton3に画像を設定
-        GenreButton3.setImage(UIImage(named: "1-3"), for: UIControl.State())
+        GenreButton3.setImage(UIImage(named: "1-7"), for: UIControl.State())
         // GenreButton3を追加
         self.view.addSubview(GenreButton3)
         
-        // ジャンル２
+        // ジャンル２（ドラマ）
         GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
         // GenreButton2に画像を設定
-        GenreButton2.setImage(UIImage(named: "1-2"), for: UIControl.State())
+        GenreButton2.setImage(UIImage(named: "1-1"), for: UIControl.State())
         // GenreButton2を追加
         self.view.addSubview(GenreButton2)
         
-        // ジャンル1
+        // ジャンル1（アニメ・漫画）
         GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
         // GenreButton1に画像を設定
-        GenreButton1.setImage(UIImage(named: "1-13"), for: UIControl.State())
+        GenreButton1.setImage(UIImage(named: "1-17"), for: UIControl.State())
         // GenreButton1を追加
         self.view.addSubview(GenreButton1)
         
@@ -210,102 +214,7 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
             //x:値減少で左 y:値減少で上
             GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
             // GenreButton4に画像を設定
-            GenreButton4.setImage(UIImage(named: "1-1"), for: UIControl.State())
-            // GenreButton3を追加
-            self.view.addSubview(GenreButton4)
-            
-            // ジャンル３
-            GenreButton3.frame = CGRect(x: 215, y: 85, width: 90, height: 73);
-            // GenreButton3に画像を設定
-            GenreButton3.setImage(UIImage(named: "1-4"), for: UIControl.State())
-            // GenreButton3を追加
-            self.view.addSubview(GenreButton3)
-            
-            // ジャンル２
-            GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
-            // GenreButton2に画像を設定
-            GenreButton2.setImage(UIImage(named: "1-3"), for: UIControl.State())
-            // GenreButton2を追加
-            self.view.addSubview(GenreButton2)
-            
-            // ジャンル1
-            GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
-            // GenreButton1に画像を設定
-            GenreButton1.setImage(UIImage(named: "1-14"), for: UIControl.State())
-            // GenreButton1を追加
-            self.view.addSubview(GenreButton1)
-            flag1 = false
-            flag2 = true
-        } else if flag2 == true {
-            print("ボーボボだ")
-            // ジャンル４
-            //x:値減少で左 y:値減少で上
-            GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
-            // GenreButton4に画像を設定
-            GenreButton4.setImage(UIImage(named: "1-2"), for: UIControl.State())
-            // GenreButton3を追加
-            self.view.addSubview(GenreButton4)
-            
-            // ジャンル３
-            GenreButton3.frame = CGRect(x: 215, y: 85, width: 90, height: 73);
-            // GenreButton3に画像を設定
-            GenreButton3.setImage(UIImage(named: "1-1"), for: UIControl.State())
-            // GenreButton3を追加
-            self.view.addSubview(GenreButton3)
-            
-            // ジャンル２
-            GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
-            // GenreButton2に画像を設定
-            GenreButton2.setImage(UIImage(named: "1-4"), for: UIControl.State())
-            // GenreButton2を追加
-            self.view.addSubview(GenreButton2)
-            
-            // ジャンル1
-            GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
-            // GenreButton1に画像を設定
-            GenreButton1.setImage(UIImage(named: "1-15"), for: UIControl.State())
-            // GenreButton1を追加
-            self.view.addSubview(GenreButton1)
-            flag2 = false
-            flag3 = true
-        } else if flag3 == true {
-            print("ボボボーボボーボボが")
-            // ジャンル４
-            //x:値減少で左 y:値減少で上
-            GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
-            // GenreButton4に画像を設定
-            GenreButton4.setImage(UIImage(named: "1-3"), for: UIControl.State())
-            // GenreButton3を追加
-            self.view.addSubview(GenreButton4)
-            // ジャンル３
-            GenreButton3.frame = CGRect(x: 215, y: 85, width: 90, height: 73);
-            // GenreButton3に画像を設定
-            GenreButton3.setImage(UIImage(named: "1-2"), for: UIControl.State())
-            // GenreButton3を追加
-            self.view.addSubview(GenreButton3)
-            
-            // ジャンル２
-            GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
-            // GenreButton2に画像を設定
-            GenreButton2.setImage(UIImage(named: "1-1"), for: UIControl.State())
-            // GenreButton2を追加
-            self.view.addSubview(GenreButton2)
-            
-            // ジャンル1
-            GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
-            // GenreButton1に画像を設定
-            GenreButton1.setImage(UIImage(named: "1-16"), for: UIControl.State())
-            // GenreButton1を追加
-            self.view.addSubview(GenreButton1)
-            flag3 = false
-            flag4 = true
-        } else if flag4 == true {
-            print("出たぞ!!!!!")
-            // ジャンル４
-            //x:値減少で左 y:値減少で上
-            GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
-            // GenreButton4に画像を設定
-            GenreButton4.setImage(UIImage(named: "1-4"), for: UIControl.State())
+            GenreButton4.setImage(UIImage(named: "1-5"), for: UIControl.State())
             // GenreButton3を追加
             self.view.addSubview(GenreButton4)
             
@@ -319,7 +228,7 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
             // ジャンル２
             GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
             // GenreButton2に画像を設定
-            GenreButton2.setImage(UIImage(named: "1-2"), for: UIControl.State())
+            GenreButton2.setImage(UIImage(named: "1-7"), for: UIControl.State())
             // GenreButton2を追加
             self.view.addSubview(GenreButton2)
             
@@ -327,6 +236,101 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
             GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
             // GenreButton1に画像を設定
             GenreButton1.setImage(UIImage(named: "1-13"), for: UIControl.State())
+            // GenreButton1を追加
+            self.view.addSubview(GenreButton1)
+            flag1 = false
+            flag2 = true
+        } else if flag2 == true {
+            print("ボーボボだ")
+            // ジャンル４
+            //x:値減少で左 y:値減少で上
+            GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
+            // GenreButton4に画像を設定
+            GenreButton4.setImage(UIImage(named: "1-1"), for: UIControl.State())
+            // GenreButton3を追加
+            self.view.addSubview(GenreButton4)
+            
+            // ジャンル３
+            GenreButton3.frame = CGRect(x: 215, y: 85, width: 90, height: 73);
+            // GenreButton3に画像を設定
+            GenreButton3.setImage(UIImage(named: "1-5"), for: UIControl.State())
+            // GenreButton3を追加
+            self.view.addSubview(GenreButton3)
+            
+            // ジャンル２
+            GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
+            // GenreButton2に画像を設定
+            GenreButton2.setImage(UIImage(named: "1-3"), for: UIControl.State())
+            // GenreButton2を追加
+            self.view.addSubview(GenreButton2)
+            
+            // ジャンル1
+            GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
+            // GenreButton1に画像を設定
+            GenreButton1.setImage(UIImage(named: "1-19"), for: UIControl.State())
+            // GenreButton1を追加
+            self.view.addSubview(GenreButton1)
+            flag2 = false
+            flag3 = true
+        } else if flag3 == true {
+            print("ボボボーボボーボボが")
+            // ジャンル４
+            //x:値減少で左 y:値減少で上
+            GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
+            // GenreButton4に画像を設定
+            GenreButton4.setImage(UIImage(named: "1-7"), for: UIControl.State())
+            // GenreButton3を追加
+            self.view.addSubview(GenreButton4)
+            // ジャンル３
+            GenreButton3.frame = CGRect(x: 215, y: 85, width: 90, height: 73);
+            // GenreButton3に画像を設定
+            GenreButton3.setImage(UIImage(named: "1-1"), for: UIControl.State())
+            // GenreButton3を追加
+            self.view.addSubview(GenreButton3)
+            
+            // ジャンル２
+            GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
+            // GenreButton2に画像を設定
+            GenreButton2.setImage(UIImage(named: "1-5"), for: UIControl.State())
+            // GenreButton2を追加
+            self.view.addSubview(GenreButton2)
+            
+            // ジャンル1
+            GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
+            // GenreButton1に画像を設定
+            GenreButton1.setImage(UIImage(named: "1-15"), for: UIControl.State())
+            // GenreButton1を追加
+            self.view.addSubview(GenreButton1)
+            flag3 = false
+            flag4 = true
+        } else if flag4 == true {
+            print("出たぞ!!!!!")
+            // ジャンル４
+            //x:値減少で左 y:値減少で上
+            GenreButton4.frame = CGRect(x: 315, y: 84.5, width: 90, height: 73);
+            // GenreButton4に画像を設定
+            GenreButton4.setImage(UIImage(named: "1-3"), for: UIControl.State())
+            // GenreButton3を追加
+            self.view.addSubview(GenreButton4)
+            
+            // ジャンル３
+            GenreButton3.frame = CGRect(x: 215, y: 85, width: 90, height: 73);
+            // GenreButton3に画像を設定
+            GenreButton3.setImage(UIImage(named: "1-7"), for: UIControl.State())
+            // GenreButton3を追加
+            self.view.addSubview(GenreButton3)
+            
+            // ジャンル２
+            GenreButton2.frame = CGRect(x: 115, y: 85, width: 90, height: 73);
+            // GenreButton2に画像を設定
+            GenreButton2.setImage(UIImage(named: "1-1"), for: UIControl.State())
+            // GenreButton2を追加
+            self.view.addSubview(GenreButton2)
+            
+            // ジャンル1
+            GenreButton1.frame = CGRect(x: -10, y: -20, width: 425, height: 300);
+            // GenreButton1に画像を設定
+            GenreButton1.setImage(UIImage(named: "1-17"), for: UIControl.State())
             // GenreButton1を追加
             self.view.addSubview(GenreButton1)
             flag4 = false
@@ -442,7 +446,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.hidesBottomBarWhenPushed = true
+        //self.hidesBottomBarWhenPushed = true
         self.performSegue(withIdentifier: "toNewsViewController", sender: nil)
        
     }
