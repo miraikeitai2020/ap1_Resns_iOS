@@ -83,7 +83,7 @@ class HomeViewController: UIViewController ,UIGestureRecognizerDelegate,UIScroll
         collectionView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
         // セルの大きさを設定
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 242)
+        layout.itemSize = CGSize(width: 200, height: 200)
         //layout.itemSize = CGSize(width:, height: 242)
         collectionView.collectionViewLayout = layout
         view.addSubview(collectionView)
@@ -410,15 +410,14 @@ extension HomeViewController: UICollectionViewDataSource {
             //配列のi番目にデータが格納されている
            
             self.articles = articlesArticles
-            print(self.articles[0]?[self.i]?.title)
-            print(self.articles[0]?.count)
+
             //記事タイトルの設定
             cell.titleLabel.text = self.articles[0]?[indexPath.row]?.title
             //記事ハッシュタグの設定
-            cell.tagButton1.setTitle(self.articles[0]?[indexPath.row]?.tags?[0], for: .normal)
-            cell.tagButton2.setTitle(self.articles[0]?[indexPath.row]?.tags?[1], for: .normal)
-            cell.tagButton3.setTitle(self.articles[0]?[indexPath.row]?.tags?[2], for: .normal)
-            cell.tagButton4.setTitle(self.articles[0]?[indexPath.row]?.tags?[3], for: .normal)
+            cell.tagButton1.setTitle("#"+(self.articles[0]?[indexPath.row]?.tags?[0])!, for: .normal)
+            cell.tagButton2.setTitle("#"+(self.articles[0]?[indexPath.row]?.tags?[1])!, for: .normal)
+            cell.tagButton3.setTitle("#"+(self.articles[0]?[indexPath.row]?.tags?[2])!, for: .normal)
+            cell.tagButton4.setTitle("#"+(self.articles[0]?[indexPath.row]?.tags?[3])!, for: .normal)
             //記事画像の設定
             print("記事画像URL : \(String(describing: self.articles[0]?[indexPath.row]?.imagePath))")
             
