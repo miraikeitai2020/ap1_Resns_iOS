@@ -17,6 +17,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
+        
+        
+        
+        // UserDefaults（年）を初期化
+        UserDefaults.standard.set(0, forKey: "year")
+        // UserDefaults（月）を初期化
+        UserDefaults.standard.set(0, forKey: "month")
+        
+        // UserDefaults（ジャンル）を初期化
+        UserDefaults.standard.set("アニメ・漫画", forKey: "genre")
+        // UserDefaults（サーチ）を初期化
+        UserDefaults.standard.set("", forKey: "Search")
+        
+        
+        
+       
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
          window = UIWindow(windowScene: windowScene)
          window?.rootViewController = UIStoryboard(name: "Start", bundle: nil).instantiateInitialViewController()

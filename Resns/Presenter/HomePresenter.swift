@@ -1,12 +1,19 @@
 
 import Foundation
 
+
 class HomePresenter{
     //let semaphore = DispatchSemaphore(value: 0)
     
     func application(completion: @escaping ( [[ArticlesQuery.Data.Article.Article?]?] ) -> Void) {
-        Network.shared.apollo.fetch(query: ArticlesQuery(genre: "アニメ・漫画")) { result in
-           // self.semaphore.signal()
+        //print("aaaaaa",genre)
+        
+        var year = UserDefaults.standard.integer(forKey: "year")
+        var month = UserDefaults.standard.integer(forKey: "month")
+        var genre = UserDefaults.standard.string(forKey: "genre")
+        
+        Network.shared.apollo.fetch(query: ArticlesQuery(genre: "\(genre ?? "アニメ・漫画")",year: year,month: month)) {
+            result in
             switch result {
                 case .success(let response):
                     completion([response.data?.articles.articles])
@@ -15,6 +22,6 @@ class HomePresenter{
                     print(error)
                 }
             }
-       // semaphore.wait()
         }
+    
 }

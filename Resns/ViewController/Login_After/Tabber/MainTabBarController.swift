@@ -23,6 +23,13 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         
         // GlobalTabBarControllerで表示したい画面に関する設定処理
         setupMainTabBarContents()
+        
+        let iconImage = UIImageView(image: UIImage(named: "rogo_katto"))
+        iconImage.frame = CGRect(x: 145, y: 50, width: 120, height: 60)
+        self.view.addSubview(iconImage)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = .black
+        self.view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     }
     
     //タブ選択時に実行する処理

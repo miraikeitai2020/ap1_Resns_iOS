@@ -416,10 +416,6 @@ class GenreSelectViewController: UIViewController, UIGestureRecognizerDelegate{
             // Dispose of any resources that can be recreated.
         }
     
-    
-    
-    
-    
     // ジャンルを４個選んだら次へボタンに移動
     
     

@@ -10,7 +10,9 @@ import Foundation
 class SearchPresenter{
     
     func application(completion: @escaping ([[ArticlesFromTagQuery.Data.ArticlesFromTag.Article?]?]) -> Void) {
-        Network.shared.apollo.fetch(query: ArticlesFromTagQuery(tag: "BTS")) { result in
+        
+        var search = UserDefaults.standard.string(forKey: "Search")
+        Network.shared.apollo.fetch(query: ArticlesFromTagQuery(tag: "\(search ?? "BTS")")) { result in
                 switch result {
                 case .success(let response):
                     completion([response.data?.articlesFromTag.articles])
